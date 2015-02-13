@@ -26,7 +26,7 @@ $(document).ready(function(){
 		$("#stylists-section .stylists-other").hide();
 	});
 	
-	$("#stylists-section .stylists-thumb").click(function(){
+	$("#stylists-section .stylists-work").click(function(){
 		$("#stylists-section .stylists-lightbox").show();
 	});
 	
