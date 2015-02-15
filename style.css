@@ -245,6 +245,7 @@ aside .menu-hairstylists-button {
 	width: 315px;
 	height: 195px;
 	overflow: hidden;
+	position: relative;
 }
 
 #stylists-section .sub-section.stylists .stylist-background {
@@ -261,15 +262,26 @@ aside .menu-hairstylists-button {
 #stylists-section .sub-section.stylists .stylists-work {
 	display: inline-block;
 	margin-right: 15px;
+	top: 30px;
 }
 
-#stylists-section .sub-section.stylists .stylists-thumb-controls {
+#stylists-section .sub-section.stylists .stylists-thumb-controls .stylists-thumb-next {
 	position: absolute;
 	background: url("img/t3/LeftSideIcon.png") no-repeat;
-	top: 0px;
-	left: 275px;
+	top: 29px;
+	right: 0px;
 	width: 41px;
-	height: 100%;
+	height: 141px;
+}
+
+#stylists-section .sub-section.stylists .stylists-thumb-controls .stylists-thumb-prev {
+	display: none;
+	position: absolute;
+	background: url("img/t3/RightSideIcon.png") no-repeat;
+	top: 29px;
+	left: -1px;
+	width: 41px;
+	height: 141px;
 }
 
 

@@ -26,6 +26,30 @@ $(document).ready(function(){
 		$("#stylists-section .stylists-other").hide();
 	});
 
+	$("#stylists-section .stylists-thumb-next").click(function(){
+		var $work_wrapper = $(this).parent().prev(".stylists-work-wrapper");
+		$(this).fadeOut().next().fadeIn();
+
+		$work_wrapper
+			.animate({
+				left: "-160px"
+			}, 200);
+
+		return false;
+	});
+
+	$("#stylists-section .stylists-thumb-prev").click(function(){
+		var $work_wrapper = $(this).parent().prev(".stylists-work-wrapper");
+		$(this).fadeOut().prev().fadeIn();
+
+		$work_wrapper
+			.animate({
+				left: "-1px"
+			}, 200);
+
+		return false;
+	});
+
 	$("#stylists-section .stylists-work").click(function(){
 		$("#stylists-section .stylists-lightbox").show();
 		return false;
