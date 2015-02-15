@@ -285,25 +285,6 @@ aside .menu-hairstylists-button {
 }
 
 
-/*#stylists-section .sub-section.stylists .stylists-active {
-	display: none;
-	position: relative;
-	top: 10px;
-	left: 14px;
-}*/
-
-/*#stylists-section .sub-section.stylists .stylists-other {
-	position: relative;
-	top: 11px;
-	left: 19px;
-}*/
-
-/*#stylists-section .sub-section.stylists .stylists-thumb {
-	display: block;
-	position: absolute;
-	top: 41px;
-	left: 480px;
-}*/
 
 /* Stylists section – Lightbox */
 #stylists-section .sub-section.stylists .stylists-lightbox {
@@ -315,10 +296,15 @@ aside .menu-hairstylists-button {
 	background: rgba(41, 41, 41, 0.9);
 }
 
-#stylists-section .sub-section.stylists .stylists-lightbox .stylists-large {
+#stylists-section .sub-section.stylists .stylists-lightbox .stylists-lightbox-wrapper {
 	position: absolute;
 	top: 200px;
 	left: 100px;
+	width: 200%;
+}
+
+#stylists-section .sub-section.stylists .stylists-lightbox .stylists-lightbox-wrapper .stylists-large{
+	margin-right: 25px;
 }
 
 #stylists-section .sub-section.stylists .stylists-lightbox-controls .prev {
@@ -339,7 +325,7 @@ aside .menu-hairstylists-button {
 	display: block;
 	position: absolute;
 	top: 170px;
-	left: 680px;
+	left: 70px;
 }
 
 /* Stylists section — Filter */

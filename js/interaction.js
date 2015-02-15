@@ -44,7 +44,7 @@ $(document).ready(function(){
 
 		$work_wrapper
 			.animate({
-				left: "-1px"
+				left: "0px"
 			}, 200);
 
 		return false;
@@ -53,10 +53,6 @@ $(document).ready(function(){
 	$("#stylists-section .stylists-work").click(function(){
 		$("#stylists-section .stylists-lightbox").show();
 		return false;
-	});
-
-	$("#stylists-section .stylists-lightbox .cancel").click(function(){
-		$("#stylists-section .stylists-lightbox").hide();
 	});
 
 	$("#stylists-section .stylists-stylist").click(function(){
@@ -104,6 +100,40 @@ $(document).ready(function(){
 				left: "+=321px"
 			}, 500);
 		}
+	});
+
+
+
+	// Hair Stylists Lightbox
+	$("#stylists-section .stylists-lightbox-controls .next").click(function(){
+		var $image_wrapper = $(this).parent().prev(".stylists-lightbox-wrapper");
+		$(this).hide().prev().show();
+
+		$image_wrapper
+			.animate({
+				left: "-=640px"
+			}, 400);
+	});
+
+	$("#stylists-section .stylists-lightbox-controls .prev").click(function(){
+		var $image_wrapper = $(this).parent().prev(".stylists-lightbox-wrapper");
+		$(this).hide().next().show();
+
+		$image_wrapper
+			.animate({
+				left: "100px"
+			}, 400);
+	});
+
+	$("#stylists-section .stylists-lightbox .cancel").click(function(){
+		$("#stylists-section .stylists-lightbox").hide();
+		$("#stylists-section .stylists-lightbox-controls .next").show().prev().hide();
+
+		var $image_wrapper = $(this).parent().prev(".stylists-lightbox-wrapper");
+		$image_wrapper
+			.animate({
+				left: "100px"
+			}, 400);
 	});
 
 
