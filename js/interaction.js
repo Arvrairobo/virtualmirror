@@ -6,26 +6,29 @@ $(document).ready(function(){
 		$("#menu-section").show();
 	});
 
+
 	// Menu screen
 	$("#menu-section .menu-stylists-button").click(function(){
 		$("#menu-section").hide();
 		$("#stylists-section").show();
 	});
 
-	// Hair Stylists screen
+
+	// Hair Stylists Filter screen
 	$("#stylists-section .menu-filter-button").click(function(){
-		if($("#stylists-section .stylists-filter").is(":visible")) {
-			$("#stylists-section .stylists-filter").hide();
-		} else {
+			$(this).hide().next().show();
 			$("#stylists-section .stylists-filter").show();
-		}
 	});
 
-	$("#stylists-section .stylists-filter").click(function(){
-		$("#stylists-section .stylists-filter").hide();
-		$("#stylists-section .stylists-other").hide();
+	$("#stylists-section .menu-search-button").click(function(){
+			$(this).hide().prev().show();
+			$("#stylists-section .stylists-filter").hide();
+			$("#stylists-section .stylists-stylist:first-child").show().siblings().hide();
 	});
 
+
+
+	// Hair Stylists screen
 	$("#stylists-section .stylists-thumb-next").click(function(){
 		var $work_wrapper = $(this).parent().prev(".stylists-work-wrapper");
 		$(this).fadeOut().next().fadeIn();
