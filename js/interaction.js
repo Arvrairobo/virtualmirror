@@ -84,6 +84,24 @@ $(document).ready(function(){
 			$("#stylists-section .stylists-pick-button").show();
 		}
 
+		$("#stylists-section .stylists-pick-button").click(function(){
+			$("#stylists-section .stylists-submit").show();
+		});
+
+		$("#stylists-section .submit-button").click(function(){
+			$("#stylists-section .submit-wrapper").hide();
+			$("#stylists-section .congratulations-wrapper").show();
+		});
+
+		$("#stylists-section .congratulations-button").click(function(){
+			$("#stylists-section .stylists-submit").hide();
+			$("#stylists-section .submit-wrapper").show();
+			$("#stylists-section .congratulations-wrapper").hide();
+		});
+
+
+
+
 	});
 
 
