@@ -34,7 +34,7 @@ aside {
 	position: absolute;
 	display: block;
 	width: 321px;
-	height: 100%;	
+	height: 100%;
 	overflow: hidden;
 	z-index: 101;
 	left: -321px;
@@ -43,28 +43,28 @@ aside {
 aside .menu-logout-button {
 	display: block;
 	position: absolute;
-	bottom: 5px;	
+	bottom: 5px;
 	left: 40px;
 }
 
 aside .menu-virtualhair-button {
 	display: block;
 	position: absolute;
-	top: 255px;	
+	top: 255px;
 	left: 40px;
 }
 
 aside .menu-favorites-button {
 	display: block;
 	position: absolute;
-	top: 335px;	
+	top: 335px;
 	left: 40px;
 }
 
 aside .menu-hairstylists-button {
 	display: block;
 	position: absolute;
-	top: 415px;	
+	top: 415px;
 	left: 40px;
 }
 
@@ -189,7 +189,7 @@ aside .menu-hairstylists-button {
 
 #stylists-section .sub-section.stylists {
 	position: relative;
-	top: 90px;
+	top: 80px;
 	width: 100%;
 	height: 93.66%;
 }
@@ -198,7 +198,7 @@ aside .menu-hairstylists-button {
 	background: teal;
 	height: 2px;
 	width: 94%;
-	margin: 0 3% 10px 3%;
+	margin: 0 3%;
 }
 
 #stylists-section .sub-section.stylists .stylists-pick-button {
@@ -210,17 +210,24 @@ aside .menu-hairstylists-button {
 
 #stylists-section .sub-section.stylists .stylists-stylist {
 	height: 195px;
+	padding-top: 10px;
+	overflow: hidden;
+	position: relative;
 }
 
+#stylists-section .sub-section.stylists .stylists-stylist:hover {
+	background: rgba(255, 255, 255, 0.05);
+}
 
-#stylists-section .sub-section.stylists .stylists-stylist > div {
+/*#stylists-section .sub-section.stylists .stylists-stylist > div {
 	height: 195px;
 	overflow: hidden;
-}
+}*/
 
 #stylists-section .sub-section.stylists .stylists-thumbnail {
 	margin-left: 20px;
 	width: 125px;
+	height: 100%;
 }
 
 #stylists-section .sub-section.stylists .stylists-point-icon {
@@ -231,11 +238,18 @@ aside .menu-hairstylists-button {
 #stylists-section .sub-section.stylists .stylists-info {
 	padding: 0px 0 0 10px;
 	width: 330px;
+	height: 195px;
 }
 
 #stylists-section .sub-section.stylists .stylists-work-gallery {
 	width: 315px;
+	height: 195px;
 	overflow: hidden;
+}
+
+#stylists-section .sub-section.stylists .stylist-background {
+	width: 590px;
+	padding-left: 10px;
 }
 
 #stylists-section .sub-section.stylists .stylists-work-wrapper {
@@ -300,21 +314,21 @@ aside .menu-hairstylists-button {
 	position: absolute;
 	top: 550px;
 	left: 20px;
-}	
+}
 
 #stylists-section .sub-section.stylists .stylists-lightbox-controls .next {
 	display: block;
 	position: absolute;
 	top: 550px;
 	right: 20px;
-}	
+}
 
 #stylists-section .sub-section.stylists .stylists-lightbox-controls .cancel {
 	display: block;
 	position: absolute;
 	top: 170px;
 	left: 680px;
-}	
+}
 
 /* Stylists section — Filter */
 #stylists-section .sub-section.stylists .stylists-filter {
