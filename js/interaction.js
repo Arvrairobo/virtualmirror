@@ -13,6 +13,107 @@ $(document).ready(function(){
 		$("#stylists-section").show();
 	});
 
+	$(".menu-hair-button").click(function(){
+		$("#menu-section").hide();
+		$("#hair-section").show();
+	});
+
+
+
+	// Virtual Hair Face Record screen
+	var record = 0;
+	$("#hair-section .hair-container").click(function(){
+		$hair_container = $(this);
+		if(!record){
+			$hair_container
+				.find(".hair-face")
+					.css('opacity','1')
+					.end()
+				.find(".text-1")
+					.hide()
+					.end()
+				.find(".holding")
+					.hide()
+					.end()
+				.find(".text-2")
+					.show()
+					.end()
+				.find(".hair-outline")
+					.hide()
+					.end()
+				.find(".hair-outline-left")
+					.show()
+					.end()
+				.find(".hair-line-left")
+					.hide()
+					.end()
+				.find(".hair-line-right")
+					.hide()
+					.end()
+				.find(".hair-arrow-left")
+					.show()
+					.end()
+				.find(".hair-hold-icon")
+					.css("opacity", ".3")
+					.end();
+
+			record++;
+			return false;
+		}
+
+		if(record==1) {
+			$hair_container
+				.find(".text-2")
+					.hide()
+					.end()
+				.find(".text-3")
+					.show()
+					.end()
+				.find(".hair-outline-left")
+					.hide()
+					.end()
+				.find(".hair-outline-right")
+					.show()
+					.end()
+				.find(".hair-arrow-left")
+					.hide()
+					.end()
+				.find(".hair-arrow-right")
+					.show()
+					.end();
+
+			record++;
+			return false;
+		}
+
+		if(record==2) {
+			$hair_container
+				.find(".text-3")
+					.hide()
+					.end()
+				.find(".text-4")
+					.show()
+					.end()
+				.find(".hair-outline-right")
+					.hide()
+					.end()
+				.find(".hair-arrow-right")
+					.hide()
+					.end()
+				.find(".hair-hold-icon")
+					.hide()
+					.end();
+
+			$("#hair-section .menu-title").text("Congratulations");
+
+			record++;
+			return false;
+		}
+
+	});
+
+
+
 
 	// Hair Stylists Filter screen
 	$("#stylists-section .menu-filter-button").click(function(){

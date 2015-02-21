@@ -116,19 +116,17 @@ aside .menu-hairstylists-button {
 	display: none;
 }
 
-#menu-section .menu-virtual-hair-button {
-	display: inline-block;
-	position: absolute;
+#menu-section .menu-main {
+	margin: auto;
+	position: relative;
 	top: 240px;
-	left: 320px;
-	width: 160px;
+	width: 220px;
+
 }
 
-#menu-section .menu-favorites-button {
-	position: absolute;
-	left: 320px;
-	top: 560px;
-	width: 160px;
+#menu-section .menu-main a {
+	display: inline-block;
+	height: 320px;
 }
 
 #menu-section .menu-stylists-button {
@@ -160,12 +158,78 @@ aside .menu-hairstylists-button {
 	opacity: .2;
 }
 
+#hair-section .hair-container .hair-outline {
+	position: absolute;
+	top: 340px;
+	left: 190px;
+	opacity: .8;
+}
+
+#hair-section .hair-container .hair-outline-left {
+	display: none;
+	position: absolute;
+	top: 280px;
+	left: 190px;
+	opacity: .8;
+}
+
+#hair-section .hair-container .hair-outline-right {
+	display: none;
+	position: absolute;
+	top: 280px;
+	left: 190px;
+	opacity: .8;
+}
+
+#hair-section .hair-container .hair-text {
+	position: absolute;
+	top: 90px;
+	width: 60%;
+	margin: 0 20%;
+}
+
+#hair-section .hair-container .hair-text .text-2,
+#hair-section .hair-container .hair-text .text-3,
+#hair-section .hair-container .hair-text .text-4 {
+	display: none;
+}
+
+#hair-section .hair-container .hair-text .holding {
+	position: relative;
+	top: 20px;
+}
+
 #hair-section .hair-container .hair-hold-icon {
 	display: block;
 	position: absolute;
 	top: 540px;
 }
 
+#hair-section .hair-container .hair-line-left {
+	position: absolute;
+	top: 250px;
+	left: 50px;
+}
+
+#hair-section .hair-container .hair-line-right {
+	position: absolute;
+	top: 250px;
+	right: 50px;
+}
+
+#hair-section .hair-container .hair-arrow-left {
+	display: none;
+	position: absolute;
+	top: 380px;
+	left: 100px;
+}
+
+#hair-section .hair-container .hair-arrow-right {
+	display: none;
+	position: absolute;
+	top: 380px;
+	right: 100px;
+}
 
 
 /* Stylists section */
@@ -422,7 +486,7 @@ aside .menu-hairstylists-button {
 
 
 /* Global classes */
- /** { outline: 1px solid purple; } */
+ /** { outline: 1px solid purple; }*/
 
 .caption { font-size: 0.5em; letter-spacing: 0; }
 .small 	 { font-size: 0.75em; }
