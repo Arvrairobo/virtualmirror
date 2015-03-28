@@ -143,7 +143,7 @@ aside .menu-hairstylists-button {
 
 
 
-/* Hair section */
+/* Virtual Hair Face Recording */
 #hair-section {
 	position: relative;
 	background: #292929;
@@ -230,6 +230,63 @@ aside .menu-hairstylists-button {
 	top: 380px;
 	right: 100px;
 }
+
+
+/* Virtual Hair section */
+
+#hair-section .hair-container .hair-virtual {
+	display: none;
+	position: absolute;
+	width: 100%;
+}
+
+#hair-section .hair-container .hair-virtual .hair-controls {
+	position: absolute;
+	width: 100%;
+}
+
+#hair-section .hair-container .hair-stylists-button {
+	display: inline-block;
+	position: absolute;
+	top: 100px;
+	left: 20px;
+}
+
+#hair-section .hair-container .hair-like-button {
+	position: absolute;
+	top: 100px;
+	right: 20px;
+}
+
+#hair-section .hair-container .hair-virtual footer {
+	background: rgb(51, 51, 51);
+	box-sizing: border-box;
+	padding: 15px 40px 50px 40px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+#hair-section .hair-container .hair-virtual .hair-color-container {
+	padding-bottom: 10px;
+	border-bottom: 2px solid #F14281;
+}
+
+#hair-section .hair-container .hair-virtual .hair-color-container a {
+	display: inline-block;
+	width: 9%;
+}
+
+#hair-section .hair-container .hair-virtual .hair-styles-container {
+	padding-top: 30px;
+}
+
+#hair-section .hair-container .hair-virtual .hair-styles-container a {
+	display: inline-block;
+	width: 18%;
+}
+
+
 
 
 /* Stylists section */
@@ -367,7 +424,7 @@ aside .menu-hairstylists-button {
 }
 
 #stylists-section .sub-section.stylists .stylists-lightbox-controls .prev {
-	display: block;
+	display: none;
 	position: absolute;
 	top: 550px;
 	left: 20px;

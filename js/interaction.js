@@ -21,9 +21,9 @@ $(document).ready(function(){
 
 
 	// Virtual Hair Face Record screen
-	var record = 0;
-	$("#hair-section .hair-container").click(function(){
-		$hair_container = $(this);
+	var $hair_container = $("#hair-section .hair-container"),
+			record = 0;
+	$hair_container.click(function(){
 		if(!record){
 			$hair_container
 				.find(".hair-face")
@@ -105,6 +105,21 @@ $(document).ready(function(){
 					.end();
 
 			$("#hair-section .menu-title").text("Congratulations");
+
+			record++;
+			return false;
+		}
+
+		if(record==3) {
+			$hair_container
+				.find(".hair-recording-instructions")
+					.hide()
+					.end()
+				.find(".hair-virtual")
+					.show()
+					.end();
+
+			$("#hair-section .menu-title").text("Trending Hair");
 
 			record++;
 			return false;
@@ -206,7 +221,7 @@ $(document).ready(function(){
 	});
 
 
-	$("#stylists-section .menu-button").click(function(){
+	$(".menu-button").click(function(){
 		if($("aside").hasClass("open")) {
 			$("aside").animate({
 				left: "-=321px"
@@ -227,9 +242,14 @@ $(document).ready(function(){
 
 
 	// Hair Stylists Lightbox
-	$("#stylists-section .stylists-lightbox-controls .next").click(function(){
-		var $image_wrapper = $(this).parent().prev(".stylists-lightbox-wrapper");
-		$(this).hide().prev().show();
+	var $image_wrapper = $(".stylists-lightbox-wrapper"),
+		$prev = $("#stylists-section .stylists-lightbox-controls .prev"),
+		$next = $("#stylists-section .stylists-lightbox-controls .next");
+
+
+	$next.click(function(){
+		$next.hide();
+		$prev.show();
 
 		$image_wrapper
 			.animate({
@@ -237,9 +257,9 @@ $(document).ready(function(){
 			}, 400);
 	});
 
-	$("#stylists-section .stylists-lightbox-controls .prev").click(function(){
-		var $image_wrapper = $(this).parent().prev(".stylists-lightbox-wrapper");
-		$(this).hide().next().show();
+	$prev.click(function(){
+		$prev.hide();
+		$next.show();
 
 		$image_wrapper
 			.animate({
@@ -247,16 +267,14 @@ $(document).ready(function(){
 			}, 400);
 	});
 
-	$("#stylists-section .stylists-lightbox .cancel").click(function(){
+	$("#stylists-section .stylists-large").click(function(){
 		$("#stylists-section .stylists-lightbox").hide();
-		$("#stylists-section .stylists-lightbox-controls .next").show().prev().hide();
+		$prev.hide();
+		$next.show();
 
-		var $image_wrapper = $(this).parent().prev(".stylists-lightbox-wrapper");
 		$image_wrapper
-			.animate({
+			.css({
 				left: "100px"
-			}, 400);
+			});
 	});
-
-
 });
