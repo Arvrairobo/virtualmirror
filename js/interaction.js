@@ -32,9 +32,12 @@ $(document).ready(function() {
 	}
 
 	function toggle_menu() { if($menu.hasClass("open")) { close_menu(); } else { open_menu(); } }
-
 	$(".menu-link").click(function() { open_link($(this).attr("rel")); });
 	$(".top-button").click(function() { toggle_menu(); });
+
+	function toggle_image() { $(this).toggleClass("on").find("img").toggle(); }
+	$(".toggle").click(function() { $(this).each(toggle_image).filter(".unique").siblings(".on").each(toggle_image); });
+
 
 
 	// Virtual Hair Face Record screen
@@ -145,11 +148,17 @@ $(document).ready(function() {
 		}
 	});
 
+
 	// Virtual Hair
+	$(".hair-styles-container a").click(function() {
+		var index = $(this).index();
+		$(".hair-virtual-hair div").eq(index).toggle().siblings(":visible").toggle();
+	});
 
-	function toggle_image() { $(this).toggleClass("on").find("img").toggle(); }
+	$(".hair-color-container a").click(function() {
+		$(".hair-virtual-hair div:visible").each(toggle_image);
+	});
 
-	$(".toggle").click(function() { $(this).each(toggle_image).filter(".unique").siblings(".on").each(toggle_image); });
 
 
 	// Hair Stylists Filter screen

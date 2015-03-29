@@ -60,13 +60,15 @@ aside .menu-link:hover { color: #F14281 !important; }
 #hair-section .hair-container .hair-virtual .hair-controls { position: absolute; height: 100%; width: 100%; }
 #hair-section .hair-container .hair-stylists-button { display: inline-block; position: absolute; top: 100px; left: 20px; }
 #hair-section .hair-container .hair-like-button { position: absolute; top: 100px; right: 20px; }
-#hair-section .hair-container .hair-switch-button { position: absolute; top: 880px; left: 20px; }
-#hair-section .hair-container a img:nth-child(2) { display: none; }
-#hair-section .hair-container .hair-virtual footer { background: rgb(51, 51, 51); box-sizing: border-box; padding: 15px 40px 50px 40px; position: absolute; bottom: 0; width: 100%; }
-#hair-section .hair-container .hair-virtual .hair-color-container { padding-bottom: 10px; border-bottom: 2px solid #F14281; }
-#hair-section .hair-container .hair-virtual .hair-color-container a { display: inline-block; width: 9%; }
-#hair-section .hair-container .hair-virtual .hair-styles-container { padding-top: 30px; }
-#hair-section .hair-container .hair-virtual .hair-styles-container a { display: inline-block; width: 18%; }
+#hair-section .hair-container .hair-switch-button { position: absolute; top: 910px; left: 20px; }
+#hair-section .hair-container .toggle img { vertical-align: middle; }
+#hair-section .hair-container .toggle img:nth-child(2) { display: none; }
+#hair-section .hair-container .hair-virtual footer { background: rgb(51, 51, 51); box-sizing: border-box; padding: 4px 40px 20px 40px; position: absolute; bottom: 0; width: 100%; }
+#hair-section .hair-container .hair-virtual .hair-color-container { padding-bottom: 6px; border-bottom: 2px solid #F14281; }
+#hair-section .hair-container .hair-virtual .hair-color-container a { display: inline-block; width: 9%; height: 60px; line-height: 60px; }
+#hair-section .hair-container .hair-virtual .hair-styles-container { padding-top: 3px; }
+#hair-section .hair-container .hair-virtual .hair-styles-container a { display: inline-block; width: 18%; height: 130px; line-height: 130px; }
+#hair-section .hair-container .hair-virtual .hair-virtual-hair .toggle { display: none; }
 
 /* Stylists section */
 #stylists-section { display: none; position: relative; width: 100%; height: 100%; }
