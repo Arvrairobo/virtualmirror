@@ -1,585 +1,121 @@
 
-/** { outline: 1px solid #fff; }*/
-
 /*Dark gray: #333
 Light yellow: #EFDDB7
 Pink: F14281
 Blue: 3EA3A3*/
 
 
-body {
-	background: #444;
-	font-family: sans-serif;
-	font-size: 26pt;
-	font-weight: 100;
-	letter-spacing: 1px;
-	color: #efddb7;
-}
+body { background: #444; font-family: sans-serif; font-size: 26pt; font-weight: 100; letter-spacing: 1px; color: #efddb7; }
+a { text-decoration: none; color: inherit !important; }
 
-a {
-	text-decoration: none;
-	color: inherit !important;
-}
+#container { background: url('img/background.png'); height: 1280px; width: 800px; margin: auto; position: relative; overflow: hidden; }
+#wrapper { position: relative; height: 100%; }
 
-#container {
-	background: url('img/background.png');
-	height: 1280px;
-	width: 800px;
-	margin: auto;
-	position: relative;
-	overflow: hidden;
-}
+/* Side menu */
+aside { background: url("img/MenuBarBG.png") #222; position: absolute; display: block; width: 321px; height: 100%; overflow: hidden; z-index: 101; left: -321px; font-size: 75%; }
+aside img { margin-right: 1rem; vertical-align: middle; }
+aside .menu-link { display: block; position: absolute; left: 40px; }
+aside .menu-link:nth-child(1) { top: 255px; }
+aside .menu-link:nth-child(2) { top: 335px; }
+aside .menu-link:nth-child(3) { top: 415px; }
+aside .menu-link:nth-child(4) { bottom: 1rem; }
+aside .menu-link:hover { color: #F14281 !important; }
 
-#wrapper {
-	position: relative;
-	height: 100%;
-}
-
-/*
-#container > section {
-	display: inline-block;
-}
-*/
-
-/* Side menu bar */
-aside {
-	background: url("img/MenuBarBG.png") #222;
-	position: absolute;
-	display: block;
-	width: 321px;
-	height: 100%;
-	overflow: hidden;
-	z-index: 101;
-	left: -321px;
-	font-size: 75%;
-}
-
-aside img {
-	margin-right: 1rem;
-	vertical-align: middle;
-}
-
-
-aside .menu-virtualhair-button {
-	display: block;
-	position: absolute;
-	top: 255px;
-	left: 40px;
-}
-
-aside .menu-favorites-button {
-	display: block;
-	position: absolute;
-	top: 335px;
-	left: 40px;
-}
-
-aside .menu-hairstylists-button {
-	display: block;
-	position: absolute;
-	top: 415px;
-	left: 40px;
-}
-
-aside .menu-logout-button {
-	display: block;
-	position: absolute;
-	bottom: 1rem;
-	left: 40px;
-}
-
-
-
-
-/* Top menu bar */
-.menu-bar {
-	background: #333;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 80px;
-	z-index: 100;
-}
-
-.menu-button {
-	position: absolute;
-	left: 20px;
-	top: 10px;
-}
-
-.menu-button-2 {
-	position: absolute;
-	right: 20px;
-	top: 10px;
-}
-
-.menu-title {
-	line-height: 80px;
-
-}
-
-
+/* Top bar */
+.top-bar { background: #333; position: absolute; top: 0; width: 100%; height: 80px; z-index: 100; }
+.top-button { position: absolute; left: 20px; top: 10px; }
+.top-button-2 { position: absolute; right: 20px; top: 10px; }
+.top-button:hover, .top-button-2:hover { cursor: pointer; }
+.top-title { line-height: 80px; }
 
 /* Main section */
-#main-section {
-/* 	display: none; */
-	position: relative;
-	top: 405px;
+#main-section { position: relative; top: 405px; }
 
-}
-
-
-
-/* Menu section */
-#menu-section {
-	position: relative;
-	display: none;
-}
-
-#menu-section .menu-main {
-	margin: auto;
-	position: relative;
-	top: 240px;
-	width: 220px;
-
-}
-
-#menu-section .menu-main a {
-	display: inline-block;
-	height: 320px;
-}
-
-#menu-section .menu-stylists-button {
-	position: absolute;
-	left: 180px;
-	top: 900px;
-}
-
-#menu-section .menu-about-button {
-	position: absolute;
-	right: 180px;
-	top: 900px;
-}
-
-
+/* Home section */
+#home-section { position: relative; display: none; }
+#home-section .home-main { margin: auto; position: relative; top: 240px; width: 220px; }
+#home-section .home-main a { display: inline-block; height: 320px; }
+#home-section .home-stylists-button { position: absolute; left: 180px; top: 900px; }
+#home-section .home-about-button { position: absolute; right: 180px; top: 900px; }
 
 /* Virtual Hair Face Recording */
-#hair-section {
-	position: relative;
-	background: #292929;
-	display: none;
-}
-
-#hair-section .hair-container {
-	position: relative;
-}
-
-#hair-section .hair-container .hair-face {
-	opacity: .2;
-}
-
-#hair-section .hair-container .hair-outline {
-	position: absolute;
-	top: 340px;
-	left: 190px;
-	opacity: .8;
-}
-
-#hair-section .hair-container .hair-outline-left {
-	display: none;
-	position: absolute;
-	top: 280px;
-	left: 190px;
-	opacity: .8;
-}
-
-#hair-section .hair-container .hair-outline-right {
-	display: none;
-	position: absolute;
-	top: 280px;
-	left: 190px;
-	opacity: .8;
-}
-
-#hair-section .hair-container .hair-text {
-	position: absolute;
-	top: 90px;
-	width: 60%;
-	margin: 0 20%;
-}
-
-#hair-section .hair-container .hair-text .text-2,
-#hair-section .hair-container .hair-text .text-3,
-#hair-section .hair-container .hair-text .text-4 {
-	display: none;
-}
-
-#hair-section .hair-container .hair-text .holding {
-	position: relative;
-	top: 20px;
-}
-
-#hair-section .hair-container .hair-hold-icon {
-	display: block;
-	position: absolute;
-	top: 540px;
-}
-
-#hair-section .hair-container .hair-line-left {
-	position: absolute;
-	top: 250px;
-	left: 50px;
-}
-
-#hair-section .hair-container .hair-line-right {
-	position: absolute;
-	top: 250px;
-	right: 50px;
-}
-
-#hair-section .hair-container .hair-arrow-left {
-	display: none;
-	position: absolute;
-	top: 380px;
-	left: 100px;
-}
-
-#hair-section .hair-container .hair-arrow-right {
-	display: none;
-	position: absolute;
-	top: 380px;
-	right: 100px;
-}
-
+#hair-section { position: relative; background: #292929; display: none; }
+#hair-section .hair-container { position: relative; }
+#hair-section .hair-container .hair-face { opacity: .2; }
+#hair-section .hair-container .hair-outline { position: absolute; top: 340px; left: 190px; opacity: .8; }
+#hair-section .hair-container .hair-outline-left { display: none; position: absolute; top: 280px; left: 190px; opacity: .8; }
+#hair-section .hair-container .hair-outline-right { display: none; position: absolute; top: 280px; left: 190px; opacity: .8; }
+#hair-section .hair-container .hair-text { position: absolute; top: 90px; width: 60%; margin: 0 20%; }
+#hair-section .hair-container .hair-text .text-2, #hair-section .hair-container .hair-text .text-3, #hair-section .hair-container .hair-text .text-4 { display: none; }
+#hair-section .hair-container .hair-text .holding { position: relative; top: 20px; }
+#hair-section .hair-container .hair-hold-icon { display: block; position: absolute; top: 540px; }
+#hair-section .hair-container .hair-line-left { position: absolute; top: 250px; left: 50px; }
+#hair-section .hair-container .hair-line-right { position: absolute; top: 250px; right: 50px; }
+#hair-section .hair-container .hair-arrow-left { display: none; position: absolute; top: 380px; left: 100px; }
+#hair-section .hair-container .hair-arrow-right { display: none; position: absolute; top: 380px; right: 100px; }
 
 /* Virtual Hair section */
-
-#hair-section .hair-container .hair-virtual {
-	display: none;
-	position: absolute;
-	width: 100%;
-}
-
-#hair-section .hair-container .hair-virtual .hair-controls {
-	position: absolute;
-	width: 100%;
-}
-
-#hair-section .hair-container .hair-stylists-button {
-	display: inline-block;
-	position: absolute;
-	top: 100px;
-	left: 20px;
-}
-
-#hair-section .hair-container .hair-like-button {
-	position: absolute;
-	top: 100px;
-	right: 20px;
-}
-
-#hair-section .hair-container .hair-virtual footer {
-	background: rgb(51, 51, 51);
-	box-sizing: border-box;
-	padding: 15px 40px 50px 40px;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-}
-
-#hair-section .hair-container .hair-virtual .hair-color-container {
-	padding-bottom: 10px;
-	border-bottom: 2px solid #F14281;
-}
-
-#hair-section .hair-container .hair-virtual .hair-color-container a {
-	display: inline-block;
-	width: 9%;
-}
-
-#hair-section .hair-container .hair-virtual .hair-styles-container {
-	padding-top: 30px;
-}
-
-#hair-section .hair-container .hair-virtual .hair-styles-container a {
-	display: inline-block;
-	width: 18%;
-}
-
-
-
+#hair-section .hair-container .hair-virtual { display: none; position: absolute; width: 100%; }
+#hair-section .hair-container .hair-virtual .hair-controls { position: absolute; width: 100%; }
+#hair-section .hair-container .hair-stylists-button { display: inline-block; position: absolute; top: 100px; left: 20px; }
+#hair-section .hair-container .hair-like-button { position: absolute; top: 100px; right: 20px; }
+#hair-section .hair-container .hair-virtual footer { background: rgb(51, 51, 51); box-sizing: border-box; padding: 15px 40px 50px 40px; position: absolute; bottom: 0; width: 100%; }
+#hair-section .hair-container .hair-virtual .hair-color-container { padding-bottom: 10px; border-bottom: 2px solid #F14281; }
+#hair-section .hair-container .hair-virtual .hair-color-container a { display: inline-block; width: 9%; }
+#hair-section .hair-container .hair-virtual .hair-styles-container { padding-top: 30px; }
+#hair-section .hair-container .hair-virtual .hair-styles-container a { display: inline-block; width: 18%; }
 
 /* Stylists section */
-#stylists-section {
-	display: none;
-	position: relative;
-	width: 100%;
-	height: 100%;
-}
-
-#stylists-section .menu-bar .menu-search-button {
-	display: none;
-}
-
-#stylists-section .sub-section.zipcode {
-	display: none;
-	position: absolute;
-	top: 325px;
-	left: 159px;
-}
-
-#stylists-section .sub-section.stylists {
-	position: relative;
-	top: 80px;
-	width: 100%;
-	height: 93.66%;
-}
-
-#stylists-section .sub-section.stylists .stylists-divider {
-	background: teal;
-	height: 2px;
-	margin: 0 3%;
-	position: absolute;
-	width: 94%;
-	bottom: 1px;
-	/*clear: both;*/
-}
-
-#stylists-section .sub-section.stylists .stylists-pick {
-	background: url('img/Pick_bar.png');
-	display: none;
-	position: absolute;
-	width: 100%;
-	height: 160px;
-	bottom: 0;
-}
-
-#stylists-section .sub-section.stylists .stylists-pick-button {
-	position: absolute;
-	bottom: 20px;
-	left: 371px;
-}
-
-#stylists-section .sub-section.stylists .stylists-stylist {
-	height: 195px;
-	padding-top: 10px;
-	overflow: hidden;
-	position: relative;
-}
-
-#stylists-section .sub-section.stylists .stylists-stylist:hover {
-	background: rgba(255, 255, 255, 0.05);
-}
-
-#stylists-section .sub-section.stylists .stylists-thumbnail {
-	margin-left: 20px;
-	width: 125px;
-	height: 100%;
-}
-
+#stylists-section { display: none; position: relative; width: 100%; height: 100%; }
+#stylists-section .top-bar .top-search-button { display: none; }
+#stylists-section .sub-section.zipcode { display: none; position: absolute; top: 325px; left: 159px; }
+#stylists-section .sub-section.stylists { position: relative; top: 80px; width: 100%; height: 93.66%; }
+#stylists-section .sub-section.stylists .stylists-divider { background: teal; height: 2px; margin: 0 3%; position: absolute; width: 94%; bottom: 1px; }
+#stylists-section .sub-section.stylists .stylists-pick { background: url('img/Pick_bar.png'); display: none; position: absolute; width: 100%; height: 160px; bottom: 0; }
+#stylists-section .sub-section.stylists .stylists-pick-button { position: absolute; bottom: 20px; left: 371px; }
+#stylists-section .sub-section.stylists .stylists-pick-button:hover { cursor: pointer; }
+#stylists-section .sub-section.stylists .stylists-stylist { height: 198px; padding-top: 10px; overflow: hidden; position: relative; }
+#stylists-section .sub-section.stylists .stylists-stylist:hover { background: rgba(255, 255, 255, 0.05); }
+#stylists-section .sub-section.stylists .stylists-thumbnail { margin-left: 20px; width: 125px; height: 100%; }
 #stylists-section .stylists-stylist .thumb-circle { border: 3px solid transparent; border-radius: 50%; height: 121px; padding: 2px; width: 121px; }
 #stylists-section .stylists-stylist.open .thumb-circle { border: 3px solid #F14281; }
-
 #stylists-section .stylists-stylist:nth-child(1) .thumb-circle { background: url('img/t3/Stylist1.png') 50% no-repeat; }
 #stylists-section .stylists-stylist:nth-child(2) .thumb-circle { background: url('img/t3/Stylist2.png') 50% no-repeat; }
 #stylists-section .stylists-stylist:nth-child(3) .thumb-circle { background: url('img/t3/Stylist3.png') 50% no-repeat; }
 #stylists-section .stylists-stylist:nth-child(4) .thumb-circle { background: url('img/t3/Stylist4.png') 50% no-repeat; }
-
-
-#stylists-section .sub-section.stylists .stylists-point-icon {
-	position: relative;
-	top: 6px;
-}
-
-#stylists-section .sub-section.stylists .stylists-info {
-	padding: 0px 0 0 10px;
-	width: 330px;
-	height: 195px;
-}
-
-#stylists-section .sub-section.stylists .stylists-work-gallery {
-	width: 315px;
-	height: 195px;
-	overflow: hidden;
-	position: relative;
-}
-
-#stylists-section .sub-section.stylists .stylist-background {
-	width: 590px;
-	padding-left: 10px;
-}
-
-#stylists-section .sub-section.stylists .stylists-work-wrapper {
-	position: relative;
-	width: 500px;
-	height: 141px;
-}
-
-#stylists-section .sub-section.stylists .stylists-work {
-	display: inline-block;
-	margin-right: 15px;
-	top: 30px;
-}
-
-#stylists-section .sub-section.stylists .stylists-thumb-controls .stylists-thumb-next {
-	position: absolute;
-	background: url("img/t3/LeftSideIcon.png") no-repeat;
-	top: 29px;
-	right: 0px;
-	width: 41px;
-	height: 141px;
-}
-
-#stylists-section .sub-section.stylists .stylists-thumb-controls .stylists-thumb-prev {
-	display: none;
-	position: absolute;
-	background: url("img/t3/RightSideIcon.png") no-repeat;
-	top: 29px;
-	left: -1px;
-	width: 41px;
-	height: 141px;
-}
-
-
+#stylists-section .sub-section.stylists .stylists-point-icon { position: relative; top: 6px; }
+#stylists-section .sub-section.stylists .stylists-info { padding: 0px 0 0 10px; width: 330px; height: 198px; }
+#stylists-section .sub-section.stylists .stylists-work-gallery { width: 315px; height: 198px; overflow: hidden; position: relative; }
+#stylists-section .sub-section.stylists .stylist-background { width: 590px; padding-left: 10px; }
+#stylists-section .sub-section.stylists .stylists-work-wrapper { position: relative; width: 500px; height: 141px; }
+#stylists-section .sub-section.stylists .stylists-work { display: inline-block; margin-right: 15px; top: 30px; }
+#stylists-section .sub-section.stylists .stylists-thumb-controls .stylists-thumb-next { position: absolute; background: url("img/t3/LeftSideIcon.png") no-repeat; top: 29px; right: 0px; width: 41px; height: 141px; }
+#stylists-section .sub-section.stylists .stylists-thumb-controls .stylists-thumb-prev { display: none; position: absolute; background: url("img/t3/RightSideIcon.png") no-repeat; top: 29px; left: -1px; width: 41px; height: 141px; }
 
 /* Stylists section – Lightbox */
-#stylists-section .sub-section.stylists .stylists-lightbox {
-	display: none;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(41, 41, 41, 0.9);
-}
-
-#stylists-section .sub-section.stylists .stylists-lightbox .stylists-lightbox-wrapper {
-	position: absolute;
-	top: 200px;
-	left: 100px;
-	width: 200%;
-}
-
-#stylists-section .sub-section.stylists .stylists-lightbox .stylists-lightbox-wrapper .stylists-large{
-	margin-right: 25px;
-}
-
-#stylists-section .sub-section.stylists .stylists-lightbox-controls .prev {
-	display: none;
-	position: absolute;
-	top: 550px;
-	left: 20px;
-}
-
-#stylists-section .sub-section.stylists .stylists-lightbox-controls .next {
-	display: block;
-	position: absolute;
-	top: 550px;
-	right: 20px;
-}
-
-#stylists-section .sub-section.stylists .stylists-lightbox-controls .cancel {
-	display: block;
-	position: absolute;
-	top: 170px;
-	left: 70px;
-}
-
+#stylists-section .sub-section.stylists .stylists-lightbox { display: none; position: absolute; top: 0; width: 100%; height: 100%; background: rgba(41, 41, 41, 0.9); }
+#stylists-section .sub-section.stylists .stylists-lightbox .stylists-lightbox-wrapper { position: absolute; top: 200px; left: 100px; width: 200%; }
+#stylists-section .sub-section.stylists .stylists-lightbox .stylists-lightbox-wrapper .stylists-large{ margin-right: 25px; }
+#stylists-section .sub-section.stylists .stylists-lightbox-controls .prev { display: none; position: absolute; top: 550px; left: 20px; }
+#stylists-section .sub-section.stylists .stylists-lightbox-controls .next { display: block; position: absolute; top: 550px; right: 20px; }
+#stylists-section .sub-section.stylists .stylists-lightbox-controls .cancel { display: block; position: absolute; top: 170px; left: 70px; }
 
 /* Stylists section — Filter */
-#stylists-section .sub-section.stylists .stylists-filter {
-	background: rgb(50, 50, 50);
-	display: none;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-}
-
-#stylists-section .sub-section.stylists .stylists-filter > div {
-	padding-left: 20px;
-	margin-top: 20px;
-}
-
-#stylists-section .sub-section.stylists .stylists-filter-search {
-		box-sizing: border-box;
-		height: 50px;
-		border: 2px solid #EFDDB7;
-		border-radius: 25px;
-		width: 95%;
-		margin: 0 auto;
-}
-
-#stylists-section .sub-section.stylists .stylists-filter-search input {
-	display: block;
-	height: 40px;
-	width: 92%;
-	margin: 0 2%;
-}
-
-#stylists-section .sub-section.stylists .specialty-wrapper,
-#stylists-section .sub-section.stylists .reservation-wrapper {
-	height: 100px;
-	padding-top: 30px;
-	width: 80%;
-	margin: 0 auto;
-}
-
-#stylists-section .sub-section.stylists .specialty-wrapper div,
-#stylists-section .sub-section.stylists .reservation-wrapper > div {
-	border-right: 2px solid #3EA3A3;
-	float: left;
-	margin: 0px;
-	padding: 15px 10px;
-	width: 120px;
-}
-
+#stylists-section .sub-section.stylists .stylists-filter { background: rgb(50, 50, 50); display: none; position: absolute; top: 0; width: 100%; height: 100%; }
+#stylists-section .sub-section.stylists .stylists-filter > div { padding-left: 20px; margin-top: 20px; }
+#stylists-section .sub-section.stylists .stylists-filter-search { box-sizing: border-box; height: 50px; border: 2px solid #EFDDB7; border-radius: 25px; width: 95%; margin: 0 auto; }
+#stylists-section .sub-section.stylists .stylists-filter-search input { display: block; height: 40px; width: 92%; margin: 0 2%; }
+#stylists-section .sub-section.stylists .specialty-wrapper, #stylists-section .sub-section.stylists .reservation-wrapper { height: 100px; padding-top: 30px; width: 80%; margin: 0 auto; }
+#stylists-section .sub-section.stylists .specialty-wrapper div, #stylists-section .sub-section.stylists .reservation-wrapper > div { border-right: 2px solid #3EA3A3; float: left; margin: 0px; padding: 15px 10px; width: 120px; }
 #stylists-section .sub-section.stylists .specialty-wrapper div:last-child,
-#stylists-section .sub-section.stylists .reservation-wrapper div:last-child {
-	border: 0;
-}
-
-#stylists-section .sub-section.stylists .stylists-filter-price {
-	height: 200px;
-}
-
-#stylists-section .sub-section.stylists .stylists-filter-price input {
-	background: #3EA3A3;
-	border: 4px solid #EFDDB7;
-	border-radius: 10px;
-	display: block;
-	height: 12px;
-	width: 90%;
-	margin: 60px 0 0px 3%;
-}
-
-#stylists-section .sub-section.stylists .stylists-filter-price input::-webkit-slider-thumb {
-	background: #EFDDB7;
-	border-radius: 20px;
-	width: 40px;
-	height: 40px;
-	-webkit-appearance: none;
-
-}
+#stylists-section .sub-section.stylists .reservation-wrapper div:last-child { border: 0; }
+#stylists-section .sub-section.stylists .stylists-filter-price { height: 200px; }
+#stylists-section .sub-section.stylists .stylists-filter-price input { background: #3EA3A3; border: 4px solid #EFDDB7; border-radius: 10px; display: block; height: 12px; width: 90%; margin: 60px 0 0px 3%; }
+#stylists-section .sub-section.stylists .stylists-filter-price input::-webkit-slider-thumb { background: #EFDDB7; border-radius: 20px; width: 40px; height: 40px; -webkit-appearance: none; }
 
 /* Stylists section — Submit */
-#stylists-section .sub-section.stylists .stylists-submit {
-	background: rgba(41, 41, 41, 0.9);
-	display: none;
-	position: absolute;
-	width: 64%;
-	margin: 0 18%;
-	padding: 20px;
-	top: 300px;
-}
-
-#stylists-section .sub-section.stylists .stylists-submit .congratulations-wrapper {
-	display: none;
-}
-
-
-
-
-
+#stylists-section .sub-section.stylists .stylists-submit { background: rgba(41, 41, 41, 0.9); display: none; position: absolute; width: 64%; margin: 0 18%; padding: 20px; top: 300px; }
+#stylists-section .sub-section.stylists .stylists-submit .congratulations-wrapper { display: none; }
 
 
 /* Global classes */
@@ -590,7 +126,6 @@ aside .menu-logout-button {
 .green 	 { font-size: 0.75em; color: #3EA3A3; letter-spacing: 1px; margin: 0; padding: 0; }
 h2 { font-size: 28px; font-weight: 100; }
 .centered { text-align: center; }
-
 
 .inline-block { display: inline-block; }
 .floatleft { float: left;}
@@ -606,7 +141,6 @@ h2 { font-size: 28px; font-weight: 100; }
 .margin-bottom-40 	{ margin-bottom: 40px; 	}
 .margin-bottom-20 	{ margin-bottom: 20px; 	}
 .margin-bottom-10 	{ margin-bottom: 10px; 	}
-
 .margin-top-150 	{ margin-top: 150px; 	}
 .margin-top-100 	{ margin-top: 100px; 	}
 .margin-top-75 		{ margin-top: 75px; 	}
@@ -614,10 +148,8 @@ h2 { font-size: 28px; font-weight: 100; }
 .margin-top-40 		{ margin-top: 40px; 	}
 .margin-top-20 		{ margin-top: 20px; 	}
 .margin-top-10 		{ margin-top: 10px; 	}
-
 .left-20			{ position: relative; left: 20px; 	}
 .left-160			{ position: relative; left: 160px; 	}
 .left-320			{ position: relative; left: 160px; 	}
-
 .right-160			{ position: relative; right: 160px; }
 .right-320			{ position: relative; right: 320px; }
