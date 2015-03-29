@@ -7,6 +7,26 @@ $(document).ready(function(){
 	});
 
 
+	// Top bar
+	$(".menu-button").click(function(){
+		if($("aside").hasClass("open")) {
+			$("aside").animate({
+				left: "-=321px"
+			}, 500).removeClass("open");
+			$("section:visible").animate({
+				left: "-=321px"
+			}, 500);
+		} else {
+			$("aside").animate({
+				left: "+=321px"
+			}, 500).addClass("open");
+			$("section:visible").animate({
+				left: "+=321px"
+			}, 500);
+		}
+	});
+
+
 	// Menu screen
 	$("#menu-section .menu-stylists-button").click(function(){
 		$("#menu-section").hide();
@@ -184,12 +204,12 @@ $(document).ready(function(){
 					height: "195px"
 				}, 400);
 
-			$("#stylists-section .stylists-pick-button").hide();
+			$("#stylists-section .stylists-pick").hide();
 		} else {
 			$stylist
 				.addClass("open")
 				.animate({
-					height: "480px"
+					height: "470px"
 				}, 400)
 				.siblings(".open")
 				.removeClass("open")
@@ -197,7 +217,7 @@ $(document).ready(function(){
 					height: "195px"
 				}, 400);
 
-			$("#stylists-section .stylists-pick-button").show();
+			$("#stylists-section .stylists-pick").show();
 		}
 
 		$("#stylists-section .stylists-pick-button").click(function(){
@@ -220,24 +240,6 @@ $(document).ready(function(){
 
 	});
 
-
-	$(".menu-button").click(function(){
-		if($("aside").hasClass("open")) {
-			$("aside").animate({
-				left: "-=321px"
-			}, 500).removeClass("open");
-			$("section:visible").animate({
-				left: "-=321px"
-			}, 500);
-		} else {
-			$("aside").animate({
-				left: "+=321px"
-			}, 500).addClass("open");
-			$("section:visible").animate({
-				left: "+=321px"
-			}, 500);
-		}
-	});
 
 
 
