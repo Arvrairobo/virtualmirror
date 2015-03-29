@@ -138,12 +138,18 @@ $(document).ready(function() {
 					.end();
 
 			$("#hair-section .top-title").text("Trending Hair");
+			$("#hair-section .top-button-2").show();
 
 			record++;
 			return false;
 		}
 	});
 
+	// Virtual Hair
+
+	function toggle_image() { $(this).toggleClass("on").find("img").toggle(); }
+
+	$(".toggle").click(function() { $(this).each(toggle_image).filter(".unique").siblings(".on").each(toggle_image); });
 
 
 	// Hair Stylists Filter screen
