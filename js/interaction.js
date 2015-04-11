@@ -32,7 +32,11 @@ $(document).ready(function() {
 	}
 
 	function toggle_menu() { if($menu.hasClass("open")) { close_menu(); } else { open_menu(); } }
-	$(".menu-link").click(function() { open_link($(this).attr("rel")); });
+	$(".menu-link").click(function() {
+		var rel = $(this).attr("rel");
+		// if(rel == "hair-section") { record = 0; }
+		open_link(rel);
+		});
 	$(".top-button").click(function() { toggle_menu(); });
 
 	function toggle_image() { $(this).toggleClass("on").find("img").toggle(); }
@@ -45,6 +49,7 @@ $(document).ready(function() {
 			record = 0;
 
 	$hair_container.click(function() {
+		console.log(record);
 		if(!record){
 			$hair_container
 				.find(".hair-face")
@@ -133,6 +138,9 @@ $(document).ready(function() {
 
 		if(record==3) {
 			$hair_container
+				.find(".hair-gradient")
+					.hide()
+					.end()
 				.find(".hair-recording-instructions")
 					.hide()
 					.end()
@@ -146,6 +154,16 @@ $(document).ready(function() {
 			record++;
 			return false;
 		}
+
+		if(record==4) {
+			$hair_container
+				.find(".hair-virtual-instructions")
+					.hide()
+					.end();
+			record++;
+			return false;
+		}
+
 	});
 
 

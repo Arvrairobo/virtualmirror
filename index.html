@@ -11,7 +11,7 @@
 
 			<aside>
 				<a class="menu-link" href="#" rel="hair-section"><img src="img/Menu_VirtualHair.png">Virtual Hair</a>
-				<a class="menu-link" href="#" rel="hair-section"><img src="img/Menu_MyFavorite.png">My Favorite</a>
+				<a class="menu-link" href="#" rel="favorites-section"><img src="img/Menu_MyFavorite.png">My Favorite</a>
 				<a class="menu-link" href="#" rel="stylists-section"><img src="img/Menu_Hairstylist.png">Hair Stylists</a>
 				<a class="menu-link menu-logout-button" href="."><img src="img/LogOutIcon.png"></a>
 			</aside>
@@ -48,7 +48,7 @@
 							<img src="img/Home_VirtualHair.png">
 							Virtual Hair
 						</a>
-						<a class="home-favorites-button menu-link" href="#" rel="hair-section">
+						<a class="home-favorites-button menu-link" href="#" rel="favorites-section">
 							<img src="img/Home_MyFavorite.png">
 							My Favorites
 						</a>
@@ -81,6 +81,7 @@
 
 					<div class="hair-container">
 						<img class="hair-face" src="img/Bg_face.png">
+						<div class="hair-gradient"></div>
 						<div class="hair-recording-instructions">
 							<div class="hair-text">
 								<p class="text-1 small">Tie your hair and keep your face within the dotted line</p>
@@ -101,7 +102,30 @@
 
 
 						<div class="hair-virtual">
-							<div class="hair-virtual-instructions"></div>
+							<div class="hair-virtual-instructions small">
+								<div class="instructions-category">
+									<img src="img/tracking/ShortLine.png">
+									<p>Change hairstyle category</p>
+								</div>
+								<div class="instructions-portfolio">
+									<img src="img/tracking/ShortLine.png">
+									<p>Tap to check stylist’s portfolio</p>
+								</div>
+								<div class="instructions-favorite">
+									<img src="img/tracking/ShortLine.png">
+									<p>Love and save to “My Favorites”</p>
+								</div>
+								<div class="instructions-swipe">
+									<p>Swipe left & right to rotate your head and see your new hairstyle</p>
+									<img src="img/tracking/ArrowLine.png">
+								</div>
+								<div class="instructions-start">
+									<p>Tap to Start</p>
+								</div>
+								<div class="instructions-type">
+									<p>Change your hair type</p>
+								</div>
+							</div>
 
 							<div class="hair-controls">
 								<a class="hair-stylists-button" href="#"><img src="img/StylistInfoIcon.png"></a>
@@ -143,7 +167,33 @@
 					</div>
 				</section>
 
-	<!-- 		Stylists			 -->
+	<!-- 		Favorites			 -->
+				<section id="favorites-section">
+					<div class="top-bar">
+						<a class="top-button" href="#">
+							<img src="img/MenuIcon.png">
+						</a>
+						<div class="top-title centered">
+							My Favorites
+						</div>
+						<div class="top-button-2">
+							<a class="" href="#"><img src="img/ShareIcon.png"></a>
+						</div>
+					</div>
+
+					<div class="sub-section favorites">
+						<div class="menu-link favorite" rel="hair-section"></div>
+						<div class="menu-link favorite" rel="hair-section"></div>
+						<div class="menu-link favorite" rel="hair-section"></div>
+						<div class="menu-link favorite" rel="hair-section"></div>
+						<div class="menu-link favorite" rel="hair-section"></div>
+					</div>
+
+				</section>
+
+
+	<!-- Stylists			 -->
+
 				<section id="stylists-section">
 					<div class="top-bar">
 						<a class="top-button" href="#">
