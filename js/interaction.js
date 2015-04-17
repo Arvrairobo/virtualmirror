@@ -55,26 +55,46 @@ $(document).ready(function() {
 		}
 	});
 
+	$(".hair-stylists-button").click(function() {
+		$modal
+			.find(".base")
+				.hide()
+				.end()
+			.find(".modal-stylist")
+				.show()
+				.end()
+			.show();
+	});
+
+
+
 	function show_modal(title, text, buttons) {
 		$modal
-			.find(".modal-title")
-				.text(title)
-				.end()
-			.find(".modal-text")
-				.text(text)
-				.end()
-			.find(".modal-controls")
-				.find("a")
-					.remove()
+			.find(".base")
+				.find(".modal-title")
+					.text(title)
 					.end()
-				.append(buttons)
+				.find(".modal-text")
+					.text(text)
+					.end()
+				.find(".modal-controls")
+					.find("a")
+						.remove()
+						.end()
+					.append(buttons)
+					.end()
+				.show()
 				.end()
-			.toggle();
+				.show();
 
-			$(".modal-controls a.ok").click(function() {
-				$modal.toggle();
+			$(".modal-box.base .modal-controls a.ok").click(function() {
+				$modal.find(".base").hide().end().hide();
 				record++;
 				$hair_container.trigger("click");
+			});
+
+			$(".modal-stylist a.ok").click(function() {
+				$modal.find(".modal-stylist").hide().end().hide();
 			});
 	}
 
@@ -286,7 +306,7 @@ $(document).ready(function() {
 			$stylist
 				.addClass("open")
 				.animate({
-					height: "470px"
+					height: "440px"
 				}, 400)
 				.siblings(".open")
 				.removeClass("open")

@@ -114,13 +114,13 @@ aside .menu-link:hover { color: #F14281 !important; }
 #stylists-section .stylists-stylist:nth-child(3) .thumb-circle { background: url('img/t3/Stylist3.png') 50% no-repeat; }
 #stylists-section .stylists-stylist:nth-child(4) .thumb-circle { background: url('img/t3/Stylist4.png') 50% no-repeat; }
 #stylists-section .sub-section.stylists .stylists-point-icon { position: relative; top: 6px; }
-#stylists-section .sub-section.stylists .stylists-info { padding: 0px 0 0 10px; width: 330px; height: 198px; }
+#stylists-section .sub-section.stylists .stylists-info { padding: 0px 0 0 20px; width: 320px; height: 198px; }
 #stylists-section .sub-section.stylists .stylists-work-gallery { width: 315px; height: 198px; overflow: hidden; position: relative; }
 #stylists-section .sub-section.stylists .stylist-background { width: 590px; padding-left: 10px; }
 #stylists-section .sub-section.stylists .stylists-work-wrapper { position: relative; width: 500px; height: 141px; }
 #stylists-section .sub-section.stylists .stylists-work { display: inline-block; margin-right: 15px; top: 30px; }
-#stylists-section .sub-section.stylists .stylists-thumb-controls .stylists-thumb-next { position: absolute; background: url("img/t3/LeftSideIcon.png") no-repeat; top: 29px; right: 0px; width: 41px; height: 141px; }
-#stylists-section .sub-section.stylists .stylists-thumb-controls .stylists-thumb-prev { display: none; position: absolute; background: url("img/t3/RightSideIcon.png") no-repeat; top: 29px; left: -1px; width: 41px; height: 141px; }
+#stylists-section .sub-section.stylists .stylists-thumb-controls .stylists-thumb-next { position: absolute; background: url("img/t3/LeftSideIcon.png") no-repeat; top: 27px; right: 0px; width: 41px; height: 141px; }
+#stylists-section .sub-section.stylists .stylists-thumb-controls .stylists-thumb-prev { display: none; position: absolute; background: url("img/t3/RightSideIcon.png") no-repeat; top: 27px; left: -1px; width: 41px; height: 141px; }
 
 /* Stylists section – Lightbox */
 #stylists-section .sub-section.stylists .stylists-lightbox { display: none; position: absolute; top: 0; width: 100%; height: 100%; background: rgba(41, 41, 41, 0.9); }
@@ -150,22 +150,27 @@ aside .menu-link:hover { color: #F14281 !important; }
 
 /*Modal screen (alerts)*/
 #modal { position: absolute; height: 100%; width: 100%; text-align: center; z-index: 10; display: none; }
-#modal .modal-box { display: inline-block; background: rgba(50, 50, 50, .95); width: 50%; position: relative; top: 35%; padding: 1rem; border: 1px solid #EFDDB7; }
-/*#modal .modal-box { background: rgba(50, 50, 50, .95); width: 50%; position: relative; top: 35%; padding: 1rem; border: 1px solid #EFDDB7;  box-sizing: border-box; left: 25%; }*/
-#modal .modal-box .modal-controls a { margin: 0 2rem; }
+#modal .modal-box { background: rgba(50, 50, 50, .95); width: 50%; position: relative; top: 35%; padding: 1rem; border: 1px solid #EFDDB7; left: 25%; }
+#modal .modal-box.base .modal-controls a { margin: 0 2rem; }
+#modal .modal-stylist { display: none; text-align: left; top: 25%; }
+#modal .modal-stylist .modal-header { padding-left: 20px; }
+#modal .modal-stylist .thumb-circle { background: url('img/t3/Stylist1.png') 50% no-repeat; border: 3px solid #3EA3A3; border-radius: 50%; height: 121px; padding: 2px; width: 121px; }
+#modal .modal-stylist .modal-controls { text-align: center; }
+#modal .modal-stylist .modal-text { clear: both; }
 
 
 /* Global classes */
  /** { outline: 1px solid purple; }*/
 
-.caption { font-size: 0.5em; letter-spacing: 0; }
+.caption, .caption p { font-size: 14px !important; letter-spacing: 0; }
 .small 	 { font-size: 0.75em; }
-.green 	 { font-size: 0.75em; color: #3EA3A3; letter-spacing: 1px; margin: 0; padding: 0; }
+.green 	 { font-size: inherit; color: #3EA3A3; letter-spacing: 1px; margin: 0; padding: 0; }
 
 p { font-family: helvetica, sans-serif; font-size: 20px; line-height: 140%; font-weight: 100; letter-spacing: 1px; }
 h1 { font-size: 150%; font-weight: 100; letter-spacing: 2px; line-height: 3rem; margin-top: 0; }
 h2 { font-size: 150%; font-weight: 400; letter-spacing: 2px; line-height: 2rem; margin-top: 0; }
 .centered { text-align: center; }
+.indent { text-indent: 2rem; }
 
 .inline-block { display: inline-block; }
 .floatleft { float: left;}
@@ -190,6 +195,7 @@ h2 { font-size: 150%; font-weight: 400; letter-spacing: 2px; line-height: 2rem; 
 .margin-top-20 		{ margin-top: 20px; 	}
 .margin-top-10 		{ margin-top: 10px; 	}
 .margin-top-0 		{ margin-top: 0; 	}
+.margin-0 		{ margin: 0; 	}
 .left-20			{ position: relative; left: 20px; 	}
 .left-160			{ position: relative; left: 160px; 	}
 .left-320			{ position: relative; left: 160px; 	}
