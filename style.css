@@ -152,7 +152,7 @@ aside .menu-link:hover { color: #F14281 !important; }
 #modal { position: absolute; height: 100%; width: 100%; text-align: center; z-index: 10; display: none; }
 #modal .modal-box { background: rgba(50, 50, 50, .95); width: 50%; position: relative; top: 35%; padding: 1rem; border: 1px solid #EFDDB7; left: 25%; }
 #modal .modal-box.base .modal-controls a { margin: 0 2rem; }
-#modal .modal-stylist { display: none; text-align: left; top: 25%; }
+#modal .modal-stylist { display: none; text-align: left; top: 20%; }
 #modal .modal-stylist .modal-header { padding-left: 20px; }
 #modal .modal-stylist .thumb-circle { background: url('img/t3/Stylist1.png') 50% no-repeat; border: 3px solid #3EA3A3; border-radius: 50%; height: 121px; padding: 2px; width: 121px; }
 #modal .modal-stylist .modal-controls { text-align: center; }
