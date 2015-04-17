@@ -1,7 +1,11 @@
 $(document).ready(function() {
 
 	var $menu = $("aside"),
-			$wrapper = $("#wrapper");
+			$wrapper = $("#wrapper"),
+			$modal = $("#modal"),
+			$hair_container = $("#hair-section .hair-container"),
+			record = 0;
+
 
 	function open_link(destination) {
 		$("section:visible").hide();
@@ -42,13 +46,43 @@ $(document).ready(function() {
 	function toggle_image() { $(this).toggleClass("on").find("img").toggle(); }
 	$(".toggle").click(function() { $(this).each(toggle_image).filter(".unique").siblings(".on").each(toggle_image); });
 
+	$(".hair-like-button").click(function() {
+		if($(this).is(".on")) {
+			var title = "Congratulations";
+			var text = "Your new hairstyle has been saved to “My Favorites”";
+			var $buttons = $("<a class='ok' href='#'><img src='img/OkIcon.png'></a>");
+			show_modal(title, text, $buttons);
+		}
+	});
+
+	function show_modal(title, text, buttons) {
+		$modal
+			.find(".modal-title")
+				.text(title)
+				.end()
+			.find(".modal-text")
+				.text(text)
+				.end()
+			.find(".modal-controls")
+				.find("a")
+					.remove()
+					.end()
+				.append(buttons)
+				.end()
+			.toggle();
+
+			$(".modal-controls a.ok").click(function() {
+				$modal.toggle();
+				record++;
+				$hair_container.trigger("click");
+			});
+	}
 
 
 	// Virtual Hair Face Record screen
-	var $hair_container = $("#hair-section .hair-container"),
-			record = 0;
-
 	$hair_container.click(function() {
+		var title, text, $buttons;
+
 		console.log(record);
 		if(!record){
 			$hair_container
@@ -88,6 +122,13 @@ $(document).ready(function() {
 		}
 
 		if(record==1) {
+			title = "Nice Job";
+			text = "You have finished your left face recording. Top OK to do next tracking.";
+			$buttons = $("<a href='#'><img src='img/RefreshIcon.png'></a><a class='ok' href='#'><img src='img/OkIcon.png'></a>");
+			show_modal(title, text, $buttons);
+		}
+
+		if(record==2) {
 			$hair_container
 				.find(".text-2")
 					.hide()
@@ -112,7 +153,14 @@ $(document).ready(function() {
 			return false;
 		}
 
-		if(record==2) {
+		if(record==3) {
+			title = "Nice Job";
+			text = "You have finished your right face recording. Top OK to preview your face.";
+			$buttons = $("<a href='#'><img src='img/RefreshIcon.png'></a><a class='ok' href='#'><img src='img/OkIcon.png'></a>");
+			show_modal(title, text, $buttons);
+		}
+
+		if(record==4) {
 			$hair_container
 				.find(".text-3")
 					.hide()
@@ -130,13 +178,13 @@ $(document).ready(function() {
 					.hide()
 					.end();
 
-			$("#hair-section .top-title").text("Congratulations");
+			$("#hair-section .top-title h1").text("Congratulations");
 
 			record++;
 			return false;
 		}
 
-		if(record==3) {
+		if(record==5) {
 			$hair_container
 				.find(".hair-gradient")
 					.hide()
@@ -148,14 +196,14 @@ $(document).ready(function() {
 					.show()
 					.end();
 
-			$("#hair-section .top-title").text("Trending Hair");
+			$("#hair-section .top-title h1").text("Trending Hair");
 			$("#hair-section .top-button-2").show();
 
 			record++;
 			return false;
 		}
 
-		if(record==4) {
+		if(record==6) {
 			$hair_container
 				.find(".hair-virtual-instructions")
 					.hide()

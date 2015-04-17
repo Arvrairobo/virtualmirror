@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Virtual Mirror</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
@@ -10,33 +11,31 @@
 		<div id="container">
 
 			<aside>
-				<a class="menu-link" href="#" rel="hair-section"><img src="img/Menu_VirtualHair.png">Virtual Hair</a>
-				<a class="menu-link" href="#" rel="favorites-section"><img src="img/Menu_MyFavorite.png">My Favorite</a>
-				<a class="menu-link" href="#" rel="stylists-section"><img src="img/Menu_Hairstylist.png">Hair Stylists</a>
+				<a class="menu-link" href="#" rel="hair-section"><h1 class="margin-bottom-0"><img src="img/Menu_VirtualHair.png">Virtual Hair</h1></a>
+				<a class="menu-link" href="#" rel="favorites-section"><h1 class="margin-bottom-0"><img src="img/Menu_MyFavorite.png">My Favorite</h1></a>
+				<a class="menu-link" href="#" rel="stylists-section"><h1 class="margin-bottom-0"><img src="img/Menu_Hairstylist.png">Hair Stylists</h1></a>
 				<a class="menu-link menu-logout-button" href="."><img src="img/LogOutIcon.png"></a>
 			</aside>
 
 			<div id="wrapper">
-				<!-- <header class="top-bar">
-					<div class="top-button">
-						<img src="img/BackIcon.png">
-					</div>
-					<div class="top-title">
-						Start Recording
-					</div>
-					<div class="top-button-2">
-						<a class="" href="#"><img src="img/ShareIcon.png"></a>
-					</div>
-				</header> -->
 
-	<!-- 			Main 			 -->
+				<section id="modal">
+					<div class="modal-box">
+						<h2 class="modal-title"></h2>
+						<p class="modal-text"></p>
+						<div class="modal-controls"></div>
+					</div>
+				</section>
+
+
+				<!-- 			Main 			 -->
 				<section id="main-section" class="centered">
 					<div class="margin-auto"><img src="img/Main_Logo.png"></div>
-					<div><p>login with</p></div>
+					<div><h1>login with</h1></div>
 					<a class="menu-link" href="#" rel="home-section"><img src="img/Main_Login.png"></a>
 				</section>
 
-	<!-- 			top			 -->
+				<!-- 			Home			 -->
 				<section id="home-section" class="centered">
 					<div class="top-bar">
 						<div class="top-button">
@@ -45,34 +44,34 @@
 					</div>
 					<div class="home-main">
 						<a class="home-hair-button menu-link" href="#" rel="hair-section">
-							<img src="img/Home_VirtualHair.png">
-							Virtual Hair
+							<div><img src="img/Home_VirtualHair.png"></div>
+							<h1>Virtual Hair</h1>
 						</a>
 						<a class="home-favorites-button menu-link" href="#" rel="favorites-section">
-							<img src="img/Home_MyFavorite.png">
-							My Favorites
+							<div><img src="img/Home_MyFavorite.png"></div>
+							<h1>My Favorites</h1>
 						</a>
 					</div>
 					<div>
 						<a class="home-stylists-button menu-link" href="#" rel="stylists-section">
 							<img src="img/Home_HairStylists.png">
-							<p>Hair Stylists</p>
+							<h1>Hair Stylists</h1>
 						</a>
 						<a class="home-about-button" href="#">
 					 		<img src="img/Home_about.png">
-					 		<p>About</p>
+					 		<h1>About</h1>
 					 	</a>
 					</div>
 				</section>
 
-	<!-- 			Hair			 -->
+				<!-- 			Hair			 -->
 				<section id="hair-section" class="centered">
 					<div class="top-bar">
 						<div class="top-button">
-							<img src="img/BackIcon.png">
+							<img src="img/MenuIcon.png">
 						</div>
 						<div class="top-title">
-							Start Recording
+							<h1>Start Recording</h1>
 						</div>
 						<div class="top-button-2">
 							<a class="" href="#"><img src="img/ShareIcon.png"></a>
@@ -84,11 +83,11 @@
 						<div class="hair-gradient"></div>
 						<div class="hair-recording-instructions">
 							<div class="hair-text">
-								<p class="text-1 small">Tie your hair and keep your face within the dotted line</p>
-								<p class="text-2 small">Follow the arrow.<br>Slowly turn your head from the center to the left and turn back to the center.</p>
-								<p class="text-3 small">Follow the arrow.<br>Slowly turn your head from the center to the right and turn back to the center.</p>
-								<p class="text-4 small">You have finished head recording.<br>Tap anywhere to start trying hairstyles.</p>
-								<p class="holding">Holding</p>
+								<p class="text-1">Tie your hair and keep your face<br> within the dotted line</p>
+								<p class="text-2">Follow the arrow.<br>Slowly turn your head from the center to the left and turn back to the center.</p>
+								<p class="text-3">Follow the arrow.<br>Slowly turn your head from the center to the right and turn back to the center.</p>
+								<p class="text-4">You have finished head recording.<br>Tap anywhere to start trying hairstyles.</p>
+								<h1 class="holding">Holding</h1>
 							</div>
 							<img class="hair-outline" src="img/tracking/FaceOutline.png">
 							<img class="hair-outline-left" src="img/tracking/LeftFace.png">
@@ -102,25 +101,25 @@
 
 
 						<div class="hair-virtual">
-							<div class="hair-virtual-instructions small">
+							<div class="hair-virtual-instructions">
 								<div class="instructions-category">
 									<img src="img/tracking/ShortLine.png">
-									<p>Change hairstyle category</p>
+									<p class="margin-top-0">Change hairstyle category</p>
 								</div>
 								<div class="instructions-portfolio">
 									<img src="img/tracking/ShortLine.png">
-									<p>Tap to check stylist’s portfolio</p>
+									<p class="margin-top-0">Tap to check <br>stylist’s portfolio</p>
 								</div>
 								<div class="instructions-favorite">
 									<img src="img/tracking/ShortLine.png">
-									<p>Love and save to “My Favorites”</p>
+									<p class="margin-top-0">Love and save <br>to “My Favorites”</p>
 								</div>
 								<div class="instructions-swipe">
-									<p>Swipe left & right to rotate your head and see your new hairstyle</p>
+									<p class="margin-bottom-0">Swipe left & right <br>to rotate your head and see<br> your new hairstyle</p>
 									<img src="img/tracking/ArrowLine.png">
 								</div>
 								<div class="instructions-start">
-									<p>Tap to Start</p>
+									<h1>Tap to Start</h1>
 								</div>
 								<div class="instructions-type">
 									<p>Change your hair type</p>
@@ -167,14 +166,14 @@
 					</div>
 				</section>
 
-	<!-- 		Favorites			 -->
+				<!-- 		Favorites			 -->
 				<section id="favorites-section">
 					<div class="top-bar">
 						<a class="top-button" href="#">
 							<img src="img/MenuIcon.png">
 						</a>
 						<div class="top-title centered">
-							My Favorites
+							<h1>My Favorites</h1>
 						</div>
 						<div class="top-button-2">
 							<a class="" href="#"><img src="img/ShareIcon.png"></a>
@@ -192,15 +191,15 @@
 				</section>
 
 
-	<!-- Stylists			 -->
 
+				<!-- Stylists			 -->
 				<section id="stylists-section">
 					<div class="top-bar">
 						<a class="top-button" href="#">
 							<img src="img/MenuIcon.png">
 						</a>
 						<div class="top-title centered">
-							Hair Stylists
+							<h1>Hair Stylists</h1>
 						</div>
 						<div class="top-button-2">
 							<a class="top-filter-button" href="#"><img class="top-button-2-a" src="img/FilterIcon.png"></a>
