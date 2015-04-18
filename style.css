@@ -59,6 +59,11 @@ aside .menu-link:hover { color: #F14281 !important; }
 
 /* Virtual Hair section */
 #hair-section .hair-container .hair-virtual { display: none; position: absolute; height: 100%; width: 100%; }
+#hair-section .hair-container .hair-virtual .hair-share { display: none; position: absolute; background: rgba(50, 50, 50, .95); top: 80px; width: 220px; right: 0; }
+#hair-section .hair-container .hair-virtual .hair-share ul { padding: 0; margin: 0; text-align: left; }
+#hair-section .hair-container .hair-virtual .hair-share li { list-style: none; line-height: 50px; border-bottom: 1px solid #EFDDB7; padding: 10px 0px 10px 20px; }
+#hair-section .hair-container .hair-virtual .hair-share li a:hover { color: #F14281 !important; }
+#hair-section .hair-container .hair-virtual .hair-share li img { vertical-align: middle; padding-right: 20px; }
 #hair-section .hair-container .hair-virtual .hair-virtual-instructions { background: rgba(50, 50, 50, 0.9); position: absolute; height: 100%; width: 100%; }
 #hair-section .hair-container .hair-virtual .instructions-category { position: absolute; top: 85px; height: 200px; width: 100%; }
 #hair-section .hair-container .hair-virtual .instructions-portfolio { position: absolute; top: 180px; left: 42px; height: 150px; width: 250px; text-align: left; }
@@ -98,7 +103,7 @@ aside .menu-link:hover { color: #F14281 !important; }
 /* Stylists section */
 #stylists-section { display: none; position: relative; width: 100%; height: 100%; }
 #stylists-section .top-bar .top-search-button { display: none; }
-#stylists-section .sub-section.zipcode { display: none; position: absolute; top: 325px; left: 159px; }
+/*#stylists-section .sub-section.zipcode { display: none; position: absolute; top: 325px; left: 159px; }*/
 #stylists-section .sub-section.stylists { position: relative; top: 80px; width: 100%; height: 93.66%; }
 #stylists-section .sub-section.stylists .stylists-divider { background: teal; height: 2px; margin: 0 3%; position: absolute; width: 94%; bottom: 1px; }
 #stylists-section .sub-section.stylists .stylists-pick { background: url('img/Pick_bar.png'); display: none; position: absolute; width: 100%; height: 145px; bottom: 0; text-align: center; }
@@ -133,8 +138,9 @@ aside .menu-link:hover { color: #F14281 !important; }
 /* Stylists section — Filter */
 #stylists-section .sub-section.stylists .stylists-filter { background: rgb(50, 50, 50); display: none; position: absolute; top: 0; width: 100%; height: 100%; }
 #stylists-section .sub-section.stylists .stylists-filter > div { padding-left: 20px; margin-top: 20px; }
-#stylists-section .sub-section.stylists .stylists-filter-search { box-sizing: border-box; height: 50px; border: 2px solid #EFDDB7; border-radius: 25px; width: 95%; margin: 0 auto; }
-#stylists-section .sub-section.stylists .stylists-filter-search input { display: block; height: 40px; width: 92%; margin: 0 2%; }
+/*#stylists-section .sub-section.stylists .stylists-filter-search { box-sizing: border-box; height: 50px; border: 2px solid #EFDDB7; border-radius: 25px; width: 95%; margin: 0 auto; }*/
+/*#stylists-section .sub-section.stylists .stylists-filter-search { box-sizing: border-box; height: 50px; border: 2px solid #EFDDB7; border-radius: 25px; width: 95%; margin: 0 auto; }*/
+/*#stylists-section .sub-section.stylists .stylists-filter-search input {  }*/
 #stylists-section .sub-section.stylists .specialty-wrapper, #stylists-section .sub-section.stylists .reservation-wrapper { height: 100px; padding-top: 30px; width: 80%; margin: 0 auto; }
 #stylists-section .sub-section.stylists .specialty-wrapper div, #stylists-section .sub-section.stylists .reservation-wrapper > div { border-right: 2px solid #3EA3A3; float: left; margin: 0px; padding: 15px 10px; width: 120px; }
 #stylists-section .sub-section.stylists .specialty-wrapper div:last-child,
@@ -152,22 +158,24 @@ aside .menu-link:hover { color: #F14281 !important; }
 
 
 /*Modal screen (alerts)*/
-#modal { position: absolute; height: 100%; width: 100%; text-align: center; z-index: 10; display: none; }
-#modal .modal-box { background: rgba(50, 50, 50, .95); width: 50%; position: relative; top: 35%; padding: 1rem; border: 1px solid #EFDDB7; left: 25%; }
+#modal { display: none; position: absolute; height: 100%; width: 100%; text-align: center; z-index: 10;  background: rgba(50, 50, 50, .8); }
+#modal .modal-box { display: none; background: rgba(50, 50, 50, .8); width: 50%; position: relative; top: 35%; padding: 1rem; border: 1px solid #EFDDB7; left: 25%; }
+#modal .modal-box.share { display: none; background: none; border: none; padding: 0; width: 60%; top: 25%; left: 20%; }
+#modal .modal-box .modal-controls { text-align: center; }
 #modal .modal-box.base .modal-controls a { margin: 0 2rem; }
-#modal .modal-stylist { display: none; text-align: left; top: 20%; }
-#modal .modal-stylist .modal-header { padding-left: 20px; }
-#modal .modal-stylist .thumb-circle { background: url('img/t3/Stylist1.png') 50% no-repeat; border: 3px solid #3EA3A3; border-radius: 50%; height: 121px; padding: 2px; width: 121px; }
-#modal .modal-stylist .modal-controls { text-align: center; }
-#modal .modal-stylist .modal-text { clear: both; }
+#modal .modal-box.modal-stylist { text-align: left; top: 20%; }
+#modal .modal-box.modal-stylist .modal-header { padding-left: 20px; }
+#modal .modal-box.modal-stylist .thumb-circle { background: url('img/t3/Stylist1.png') 50% no-repeat; border: 3px solid #3EA3A3; border-radius: 50%; height: 121px; padding: 2px; width: 121px; }
+#modal .modal-box.modal-stylist .modal-text { clear: both; }
+#modal .modal-box.zip .input-text { width: 80%; }
 
 
 /* Global classes */
  /** { outline: 1px solid purple; }*/
 
 .caption, .caption p { font-size: 14px !important; letter-spacing: 0; }
-.small 	 { font-size: 0.75em; }
-.green 	 { font-size: inherit; color: #3EA3A3; letter-spacing: 1px; margin: 0; padding: 0; }
+.small { font-size: 0.75em; }
+.green { font-size: inherit; color: #3EA3A3; letter-spacing: 1px; margin: 0; padding: 0; }
 
 p { font-family: helvetica, sans-serif; font-size: 20px; line-height: 140%; font-weight: 100; letter-spacing: 1px; }
 h1 { font-size: 150%; font-weight: 100; letter-spacing: 2px; line-height: 3rem; margin-top: 0; }
@@ -180,7 +188,7 @@ h2 { font-size: 150%; font-weight: 400; letter-spacing: 2px; line-height: 2rem; 
 .half { display: inline-block; width: 50%; }
 
 .appearance-none { -webkit-appearance: none; background: transparent; border:0; outline: none; }
-.input-text { box-sizing: border-box; height: 50px; border: 2px solid #EFDDB7; border-radius: 25px; width: 95%; margin: 0 auto; margin-bottom: 20px; text-indent: 20px; }
+.input-text { box-sizing: border-box; height: 50px; border: 2px solid #EFDDB7; border-radius: 25px; width: 80%; margin: 0 auto; margin-bottom: 20px; text-indent: 20px; }
 
 .margin-bottom-150 	{ margin-bottom: 150px; }
 .margin-bottom-100 	{ margin-bottom: 100px; }

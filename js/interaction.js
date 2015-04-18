@@ -4,104 +4,73 @@ $(document).ready(function() {
 			$wrapper = $("#wrapper"),
 			$modal = $("#modal"),
 			$hair_container = $("#hair-section .hair-container"),
-			record = 0;
+			record = 0,
+			zip = 0;
 
 
-	function open_link(destination) {
-		$("section:visible").hide();
-		$("#" + destination).show();
-		close_menu();
-	}
-
-	function open_menu() {
-		if(!$menu.hasClass("open")) {
-			$menu.animate({
-				left: "+=321px"
-			}, 500).addClass("open");
-			$wrapper.animate({
-				left: "+=321px"
-			}, 500);
-		}
-	}
-
-	function close_menu() {
-		if($menu.hasClass("open")) {
-			$menu.animate({
-				left: "-=321px"
-			}, 500).removeClass("open");
-			$wrapper.animate({
-				left: "-=321px"
-			}, 500);
-		}
-	}
-
-	function toggle_menu() { if($menu.hasClass("open")) { close_menu(); } else { open_menu(); } }
+	// Menu
 	$(".menu-link").click(function() {
 		var rel = $(this).attr("rel");
-		// if(rel == "hair-section") { record = 0; }
+
+		if(rel == "stylists-section") {
+			if(zip === 0) {
+				$("#stylists-section .sub-section.stylists").hide();
+				$modal.find(".modal-box.zip").show().end().show();
+			}
+
+			$("#stylists-section .sub-section.stylists .stylists-stylist").show();
+		}
+
 		open_link(rel);
-		});
+	});
+
+
+
+
+	// Top bar
 	$(".top-button").click(function() { toggle_menu(); });
 
-	function toggle_image() { $(this).toggleClass("on").find("img").toggle(); }
-	$(".toggle").click(function() { $(this).each(toggle_image).filter(".unique").siblings(".on").each(toggle_image); });
 
-	$(".hair-like-button").click(function() {
-		if($(this).is(".on")) {
-			var title = "Congratulations";
-			var text = "Your new hairstyle has been saved to “My Favorites”";
-			var $buttons = $("<a class='ok' href='#'><img src='img/OkIcon.png'></a>");
-			show_modal(title, text, $buttons);
-		}
+
+
+	// Modal
+	$(".modal-box a.ok").click(close_modal);
+	$(".modal-box.zip a.ok").bind("click", function(){ $("#stylists-section .sub-section.stylists").show(); zip=1; });
+	$(".modal-stylist a.ok").click(function() {
+		zip=1;
+		$(".menu-link[rel='stylists-section']").trigger("click");
+		$("#stylists-section .top-search-button").trigger("click");
 	});
 
-	$(".hair-stylists-button").click(function() {
-		$modal
-			.find(".base")
-				.hide()
-				.end()
-			.find(".modal-stylist")
-				.show()
-				.end()
-			.show();
+	//diff
+	$(".modal-box.share a.qok").click(function(){
+		var title = "Congratulations",
+				text = "Your new hairstyle has been shared on Facebook",
+				$buttons = $("<a class='ok' href='#'><img src='img/OkIcon.png'></a>");
+
+		$(".modal-box.share").hide();
+		show_modal(title, text, $buttons);
 	});
 
 
-
-	function show_modal(title, text, buttons) {
-		$modal
-			.find(".base")
-				.find(".modal-title")
-					.text(title)
-					.end()
-				.find(".modal-text")
-					.text(text)
-					.end()
-				.find(".modal-controls")
-					.find("a")
-						.remove()
-						.end()
-					.append(buttons)
-					.end()
-				.show()
-				.end()
-				.show();
-
-			$(".modal-box.base .modal-controls a.ok").click(function() {
-				$modal.find(".base").hide().end().hide();
-				record++;
-				$hair_container.trigger("click");
-			});
-
-			$(".modal-stylist a.ok").click(function() {
-				$modal.find(".modal-stylist").hide().end().hide();
-				$(".menu-link[rel='stylists-section']").trigger("click");
-				$("#stylists-section .top-search-button").trigger("click").stopPropagation();
-				// $("#stylists-section .stylists-stylist").eq(0).show().siblings().hide();
-				// $("#stylists-section .stylists-stylist").eq(0).trigger("click");
-				return false;
-			});
+	function close_modal(){
+		$modal.find(".modal-box:visible").hide().end().hide();
 	}
+
+
+
+
+
+
+	// My Favorites screen
+	$(".favorites .menu-link").click(function() {
+		$t = $(this);
+		if($t.index() == 1) { $(".hair-styles-container a").eq(0).trigger("click"); }
+		if($t.index() == 2) { $(".hair-styles-container a").eq(1).trigger("click"); }
+		if($t.index() == 3) { $(".hair-styles-container a").eq(3).trigger("click"); }
+		if($t.index() == 4) { $(".hair-styles-container a").eq(2).trigger("click"); $(".hair-styles-container a").trigger("click"); }
+	});
+
 
 
 	// Virtual Hair Face Record screen
@@ -240,7 +209,35 @@ $(document).ready(function() {
 	});
 
 
+
+
 	// Virtual Hair
+	$(".hair-share a").click(function() { $modal.find(".share").show().end().show(); $(".hair-share").toggle(); });
+
+	$("#hair-section .top-button-2").click(function() {
+		$(".hair-share").toggle();
+	});
+
+	$(".hair-like-button").click(function() {
+		if(!$(this).is(".on")) {
+			var title = "Congratulations";
+			var text = "Your new hairstyle has been saved to “My Favorites”";
+			var $buttons = $("<a class='ok' href='#'><img src='img/OkIcon.png'></a>");
+			show_modal(title, text, $buttons);
+		}
+	});
+
+	$(".hair-stylists-button").click(function() {
+		$modal
+			.find(".base")
+				.hide()
+				.end()
+			.find(".modal-stylist")
+				.show()
+				.end()
+			.show();
+	});
+
 	$(".hair-styles-container a").click(function() {
 		var index = $(this).index();
 		$(".hair-virtual-hair div").eq(index).toggle().siblings(":visible").toggle();
@@ -249,6 +246,7 @@ $(document).ready(function() {
 	$(".hair-color-container a").click(function() {
 		$(".hair-virtual-hair div:visible").each(toggle_image);
 	});
+
 
 
 
@@ -269,8 +267,6 @@ $(document).ready(function() {
 
 
 	// Hair Stylists screen
-
-
 	$("#stylists-section .stylists-work").click(function() {
 		$("#stylists-section .stylists-lightbox").show();
 		return false;
@@ -296,6 +292,134 @@ $(document).ready(function() {
 		$("#stylists-section .submit-wrapper").show();
 		$("#stylists-section .congratulations-wrapper").hide();
 	});
+
+	$("#stylists-section .stylists-thumb-next").click(function() {
+		var $work_wrapper = $(this).parent().prev(".stylists-work-wrapper");
+		$(this).fadeOut().next().fadeIn();
+
+		$work_wrapper
+			.animate({
+				left: "-160px"
+			}, 200);
+
+		return false;
+	});
+
+	$("#stylists-section .stylists-thumb-prev").click(function() {
+		var $work_wrapper = $(this).parent().prev(".stylists-work-wrapper");
+		$(this).fadeOut().prev().fadeIn();
+
+		$work_wrapper
+			.animate({
+				left: "0px"
+			}, 200);
+
+		return false;
+	});
+
+
+
+
+	// Hair Stylists Lightbox
+	var $image_wrapper = $(".stylists-lightbox-wrapper"),
+		$prev = $("#stylists-section .stylists-lightbox-controls .prev"),
+		$next = $("#stylists-section .stylists-lightbox-controls .next");
+
+	$("#stylists-section .stylists-large").click(function() {
+		$("#stylists-section .stylists-lightbox").hide();
+		$prev.hide();
+		$next.show();
+
+		$image_wrapper
+			.css({
+				left: "100px"
+			});
+	});
+
+	$next.click(function() {
+		$next.hide();
+		$prev.show();
+
+		$image_wrapper
+			.animate({
+				left: "-=640px"
+			}, 400);
+	});
+
+	$prev.click(function() {
+		$prev.hide();
+		$next.show();
+
+		$image_wrapper
+			.animate({
+				left: "100px"
+			}, 400);
+	});
+
+
+
+	// Global functions
+	function open_link(destination) {
+		$("section:visible").hide();
+		$("#" + destination).show();
+		close_menu();
+	}
+
+	function open_menu() {
+		if(!$menu.hasClass("open")) {
+			$menu.animate({
+				left: "+=321px"
+			}, 500).addClass("open");
+			$wrapper.animate({
+				left: "+=321px"
+			}, 500);
+		}
+	}
+
+	function close_menu() {
+		if($menu.hasClass("open")) {
+			$menu.animate({
+				left: "-=321px"
+			}, 500).removeClass("open");
+			$wrapper.animate({
+				left: "-=321px"
+			}, 500);
+		}
+	}
+
+	function toggle_menu() { if($menu.hasClass("open")) { close_menu(); } else { open_menu(); } }
+
+	function toggle_image() { $(this).toggleClass("on").find("img").toggle(); }
+	$(".toggle").click(function() { $(this).each(toggle_image).filter(".unique").siblings(".on").each(toggle_image); });
+
+
+
+	function show_modal(title, text, buttons) {
+		$modal
+			.find(".base")
+				.find(".modal-title")
+					.text(title)
+					.end()
+				.find(".modal-text")
+					.text(text)
+					.end()
+				.find(".modal-controls")
+					.find("a")
+						.remove()
+						.end()
+					.append(buttons)
+					.end()
+				.show()
+				.end()
+				.show();
+
+		$(".modal-box.base .modal-controls a.ok").click(function() {
+			record++;
+			$hair_container.trigger("click");
+		});
+
+		$(".modal-box a.ok").click(close_modal);
+	}
 
 	function select_stylist($s) {
 		if($s.hasClass("open")) {
@@ -330,64 +454,4 @@ $(document).ready(function() {
 		return false;
 	}
 
-	$("#stylists-section .stylists-thumb-next").click(function() {
-		var $work_wrapper = $(this).parent().prev(".stylists-work-wrapper");
-		$(this).fadeOut().next().fadeIn();
-
-		$work_wrapper
-			.animate({
-				left: "-160px"
-			}, 200);
-
-		return false;
-	});
-
-	$("#stylists-section .stylists-thumb-prev").click(function() {
-		var $work_wrapper = $(this).parent().prev(".stylists-work-wrapper");
-		$(this).fadeOut().prev().fadeIn();
-
-		$work_wrapper
-			.animate({
-				left: "0px"
-			}, 200);
-
-		return false;
-	});
-
-
-	// Hair Stylists Lightbox
-	var $image_wrapper = $(".stylists-lightbox-wrapper"),
-		$prev = $("#stylists-section .stylists-lightbox-controls .prev"),
-		$next = $("#stylists-section .stylists-lightbox-controls .next");
-
-	$next.click(function() {
-		$next.hide();
-		$prev.show();
-
-		$image_wrapper
-			.animate({
-				left: "-=640px"
-			}, 400);
-	});
-
-	$prev.click(function() {
-		$prev.hide();
-		$next.show();
-
-		$image_wrapper
-			.animate({
-				left: "100px"
-			}, 400);
-	});
-
-	$("#stylists-section .stylists-large").click(function() {
-		$("#stylists-section .stylists-lightbox").hide();
-		$prev.hide();
-		$next.show();
-
-		$image_wrapper
-			.css({
-				left: "100px"
-			});
-	});
 });

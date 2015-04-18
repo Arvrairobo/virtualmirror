@@ -19,12 +19,21 @@
 
 			<div id="wrapper">
 
-				<section id="modal">
+				<div id="modal">
 					<div class="modal-box base">
 						<h2 class="modal-title"></h2>
 						<p class="modal-text"></p>
 						<div class="modal-controls"></div>
 					</div>
+
+					<div class="modal-box zip">
+						<h2>Enter Your ZIP code</h2>
+						<input type="text" spellcheck="false" class="green appearance-none input-text" value="94221" />
+						<div class="modal-controls">
+							<a class="ok" href='#'><img src="img/OkIcon.png"></a>
+						</div>
+					</div>
+
 					<div class="modal-box modal-stylist">
 						<div class="thumb-circle floatleft margin-bottom-20"></div>
 						<div class="modal-header floatleft">
@@ -40,12 +49,17 @@
 							<p class="margin-0">304 Valencia, San Francisco, CA. 94103</p>
 							<p class="margin-bottom-0">Phone number</p>
 							<p class="margin-0 indent">562-754-4740</p>
-					</div>
+						</div>
 						<div class="modal-controls margin-top-20">
 							<a class="ok" href="#"><img src="img/Menu_Hairstylist.png"></a>
 							<p class="margin-0 centered">Make a reservation</p>
 						</div>
-				</section>
+					</div>
+
+					<div class="modal-box share">
+						<a class="qok" href="#"><img src="img/ShareInfo.png"></a>
+					</div>
+				</div>
 
 
 				<!-- 			Main 			 -->
@@ -180,6 +194,15 @@
 									<a class="toggle unique" href="#"><img src="img/hairIcon/Hair5_small.png"><img src="img/hairIcon/Hair5_large.png"></a>
 								</div>
 							</footer>
+
+							<div class="hair-share">
+								<ul>
+									<li><a href="#"><img src="img/fb.png">Facebook</a></li>
+									<li><a href="#"><img src="img/google.png">Google +</a></li>
+									<li><a href="#"><img src="img/insta.png">Instagram</a></li>
+									<li><a href="#"><img src="img/pin.png">Pinterest</a></li>
+								</ul>
+							</div>
 						</div>
 
 
@@ -225,10 +248,6 @@
 							<a class="top-filter-button" href="#"><img class="top-button-2-a" src="img/FilterIcon.png"></a>
 							<a class="top-search-button" href="#"><img class="top-button-2-b" src="img/t3/SearchIcon.png"></a>
 						</div>
-					</div>
-
-					<div class="sub-section zipcode centered">
-						<img src="img/t3/zipcodeAlert.png">
 					</div>
 
 					<div class="sub-section stylists">
@@ -407,8 +426,8 @@
 						</div>
 
 						<div class="stylists-filter">
-							<div class="stylists-filter-search">
-								<input type="text" spellcheck="false" class="green appearance-none">
+							<div class="stylists-filter-search centered">
+								<input type="text" spellcheck="false" class="green appearance-none input-text" value="short hair" />
 							</div>
 							<div class="stylists-filter-specialty">
 								<p>STYLISTS SPECIALTY:</p>
