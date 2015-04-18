@@ -95,6 +95,11 @@ $(document).ready(function() {
 
 			$(".modal-stylist a.ok").click(function() {
 				$modal.find(".modal-stylist").hide().end().hide();
+				$(".menu-link[rel='stylists-section']").trigger("click");
+				$("#stylists-section .top-search-button").trigger("click").stopPropagation();
+				// $("#stylists-section .stylists-stylist").eq(0).show().siblings().hide();
+				// $("#stylists-section .stylists-stylist").eq(0).trigger("click");
+				return false;
 			});
 	}
 
@@ -249,19 +254,82 @@ $(document).ready(function() {
 
 	// Hair Stylists Filter screen
 	$("#stylists-section .top-filter-button").click(function() {
-			$(this).hide().next().show();
-			$("#stylists-section .stylists-filter").show();
+		$(this).hide().next().show();
+		$("#stylists-section .stylists-filter").show();
 	});
 
 	$("#stylists-section .top-search-button").click(function() {
-			$(this).hide().prev().show();
-			$("#stylists-section .stylists-filter").hide();
-			$("#stylists-section .stylists-stylist:first-child").show().siblings().hide();
+		$(this).hide().prev().show();
+		$("#stylists-section .stylists-filter").hide();
+		$("#stylists-section .stylists-stylist").eq(0).show().siblings().hide();
+		$("#stylists-section .stylists-stylist").eq(0).trigger("click");
+		return false;
 	});
 
 
 
 	// Hair Stylists screen
+
+
+	$("#stylists-section .stylists-work").click(function() {
+		$("#stylists-section .stylists-lightbox").show();
+		return false;
+	});
+
+	$("#stylists-section .stylists-stylist").click(function() {
+		var $stylist = $(this);
+		select_stylist($stylist);
+		return false;
+	});
+
+	$("#stylists-section .stylists-pick-button").click(function() {
+		$("#stylists-section .stylists-submit").show();
+	});
+
+	$("#stylists-section .submit-button").click(function() {
+		$("#stylists-section .submit-wrapper").hide();
+		$("#stylists-section .congratulations-wrapper").show();
+	});
+
+	$("#stylists-section .congratulations-button").click(function() {
+		$("#stylists-section .stylists-submit").hide();
+		$("#stylists-section .submit-wrapper").show();
+		$("#stylists-section .congratulations-wrapper").hide();
+	});
+
+	function select_stylist($s) {
+		if($s.hasClass("open")) {
+			$s
+				.removeClass("open")
+				.animate({
+					height: "198px"
+				}, 400);
+
+			$("#stylists-section .stylists-pick").hide();
+			console.log("close");
+		} else {
+			console.log("asaaasasasasasas");
+			$s
+				.siblings(":visible")
+				.filter(".open")
+				.removeClass("open")
+				.animate({
+					height: "198px"
+				}, 400);
+			console.log("close siblings");
+
+			$s
+				.addClass("open")
+				.animate({
+					height: "440px"
+				}, 400);
+			console.log("open");
+
+			$("#stylists-section .stylists-pick").show();
+		}
+		return false;
+	}
+
 	$("#stylists-section .stylists-thumb-next").click(function() {
 		var $work_wrapper = $(this).parent().prev(".stylists-work-wrapper");
 		$(this).fadeOut().next().fadeIn();
@@ -285,55 +353,6 @@ $(document).ready(function() {
 
 		return false;
 	});
-
-	$("#stylists-section .stylists-work").click(function() {
-		$("#stylists-section .stylists-lightbox").show();
-		return false;
-	});
-
-	$("#stylists-section .stylists-stylist").click(function() {
-		var $stylist = $(this);
-
-		if($stylist.hasClass("open")) {
-			$stylist
-				.removeClass("open")
-				.animate({
-					height: "198px"
-				}, 400);
-
-			$("#stylists-section .stylists-pick").hide();
-		} else {
-			$stylist
-				.addClass("open")
-				.animate({
-					height: "440px"
-				}, 400)
-				.siblings(".open")
-				.removeClass("open")
-				.animate({
-					height: "198px"
-				}, 400);
-
-			$("#stylists-section .stylists-pick").show();
-		}
-
-		$("#stylists-section .stylists-pick-button").click(function() {
-			$("#stylists-section .stylists-submit").show();
-		});
-
-		$("#stylists-section .submit-button").click(function() {
-			$("#stylists-section .submit-wrapper").hide();
-			$("#stylists-section .congratulations-wrapper").show();
-		});
-
-		$("#stylists-section .congratulations-button").click(function() {
-			$("#stylists-section .stylists-submit").hide();
-			$("#stylists-section .submit-wrapper").show();
-			$("#stylists-section .congratulations-wrapper").hide();
-		});
-	});
-
-
 
 
 	// Hair Stylists Lightbox
