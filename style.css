@@ -131,6 +131,7 @@ aside .menu-link:hover { color: #F14281 !important; }
 #stylists-section .sub-section.stylists .stylists-lightbox { display: none; position: absolute; top: 0; width: 100%; height: 100%; background: rgba(41, 41, 41, 0.9); }
 #stylists-section .sub-section.stylists .stylists-lightbox .stylists-lightbox-wrapper { position: absolute; top: 200px; left: 100px; width: 200%; }
 #stylists-section .sub-section.stylists .stylists-lightbox .stylists-lightbox-wrapper .stylists-large{ margin-right: 25px; }
+#stylists-section .sub-section.stylists .stylists-lightbox .stylists-lightbox-wrapper .stylists-large:nth-child(2){ margin-left: 40px; margin-bottom: 150px; }
 #stylists-section .sub-section.stylists .stylists-lightbox-controls .prev { display: none; position: absolute; top: 550px; left: 20px; }
 #stylists-section .sub-section.stylists .stylists-lightbox-controls .next { display: block; position: absolute; top: 550px; right: 20px; }
 #stylists-section .sub-section.stylists .stylists-lightbox-controls .cancel { display: block; position: absolute; top: 170px; left: 70px; }
