@@ -22,6 +22,20 @@ $(document).ready(function() {
 		}
 
 		open_link(rel);
+
+		// Slider Range
+		$( ".slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( ".stylists-filter-price .left" ).text( "$" + ui.values[ 0 ] );
+        $( ".stylists-filter-price .right" ).text( "$" + ui.values[ 1 ] );
+      }
+    });
+		$( ".stylists-filter-price .left" ).text( "$" + $( ".slider-range" ).slider( "values", 0 ));
+		$( ".stylists-filter-price .right" ).text( "$" + $( ".slider-range" ).slider( "values", 1 ));
 	});
 
 
